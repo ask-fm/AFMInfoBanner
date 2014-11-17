@@ -7,7 +7,7 @@ end
 target 'Tests', :exclusive => true do
   pod "CVKInfoBanner", :path => "../"
 
-  pod 'Specta', '~> 0.2.1'
+  pod 'Specta', :git => 'https://github.com/specta/specta.git', :tag => 'v0.3.0.beta1'
   pod 'Expecta'
   pod 'FBSnapshotTestCase'
   pod 'Expecta+Snapshots'
