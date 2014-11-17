@@ -1,26 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sQ7-Yk-Ve7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="b28-kC-DNx">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="CVKViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <navigationController id="sQ7-Yk-Ve7" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8ad-wd-ClA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1439586060209424" green="0.16490101439790575" blue="0.59945598821989532" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.1439586060209424" green="0.16490101439790575" blue="0.43715232329842935" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2Nt-hV-c3s" kind="relationship" relationship="rootViewController" id="DJm-ar-s2k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GO0-8a-voT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="238" y="550"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ihv-Dc-DW4">
+            <objects>
+                <viewController id="2Nt-hV-c3s" customClass="CVKViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dow-XN-MxK"/>
+                        <viewControllerLayoutGuide type="bottom" id="eei-IS-srW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ll7-o6-Q42">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notice text to show" translatesAutoresizingMaskIntoConstraints="NO" id="B8p-g7-5Cd">
+                                <rect key="frame" x="20" y="120" width="280" height="61"/>
+                                <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="zse-Ig-LSt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQb-ao-IkY">
+                                <rect key="frame" x="180" y="189" width="94" height="30"/>
+                                <state key="normal" title="Red banner">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRed:" destination="2Nt-hV-c3s" eventType="touchUpInside" id="Yki-HP-2UQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-MM-3u5">
+                                <rect key="frame" x="46" y="189" width="94" height="30"/>
+                                <state key="normal" title="Green banner">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGreen:" destination="2Nt-hV-c3s" eventType="touchUpInside" id="IY2-db-sDx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lzf-MM-3u5" firstAttribute="leading" secondItem="Ll7-o6-Q42" secondAttribute="leadingMargin" constant="30" id="0v2-A8-hjv"/>
+                            <constraint firstItem="tQb-ao-IkY" firstAttribute="width" secondItem="Lzf-MM-3u5" secondAttribute="width" id="BwL-Bz-aEX"/>
+                            <constraint firstAttribute="trailing" secondItem="B8p-g7-5Cd" secondAttribute="trailing" constant="20" id="MF7-iT-2Lx"/>
+                            <constraint firstItem="B8p-g7-5Cd" firstAttribute="top" secondItem="Dow-XN-MxK" secondAttribute="bottom" constant="120" id="Ncm-YL-3KH"/>
+                            <constraint firstItem="B8p-g7-5Cd" firstAttribute="leading" secondItem="Ll7-o6-Q42" secondAttribute="leading" constant="20" id="ZwA-n0-Fb1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tQb-ao-IkY" secondAttribute="trailing" constant="30" id="phK-vC-AEm"/>
+                            <constraint firstItem="Lzf-MM-3u5" firstAttribute="top" secondItem="B8p-g7-5Cd" secondAttribute="bottom" constant="8" id="tob-IP-o3S"/>
+                            <constraint firstItem="tQb-ao-IkY" firstAttribute="top" secondItem="B8p-g7-5Cd" secondAttribute="bottom" constant="8" id="vSZ-7n-NnW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ITL-qz-wtb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="aKh-Da-psS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="tD5-dY-R84"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="B8p-g7-5Cd" id="bLA-HX-vg5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ES1-yT-vrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="685" y="502"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

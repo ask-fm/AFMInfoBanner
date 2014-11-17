@@ -6,24 +6,25 @@
 //  Copyright (c) 2014 Romans Karpelcevs. All rights reserved.
 //
 
+#import <CVKInfoBanner.h>
 #import "CVKViewController.h"
 
 @interface CVKViewController ()
+
+@property (nonatomic) IBOutlet UITextView *textView;
 
 @end
 
 @implementation CVKViewController
 
-- (void)viewDidLoad
+- (IBAction)showGreen:(id)sender
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [CVKInfoBanner showAndHideWithText:self.textView.text withStyle:CVKInfoBannerStyleGreen];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)showRed:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [CVKInfoBanner showAndHideWithText:self.textView.text withStyle:CVKInfoBannerStyleRed];
 }
 
 @end
