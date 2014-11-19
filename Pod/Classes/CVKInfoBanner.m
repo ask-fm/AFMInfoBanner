@@ -27,6 +27,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 @interface CVKInfoBanner ()
 
 @property (nonatomic) UILabel *textLabel;
+@property (nonatomic) UIView *targetView;
 @property (nonatomic) UIView *viewAboveBanner;
 @property (nonatomic) CGFloat additionalTopSpacing;
 @property (nonatomic) NSLayoutConstraint *topSpacingConstraint;
@@ -64,6 +65,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)setText:(NSString *)text
 {
+    _text = text;
     [self.textLabel setText:text];
     [self setNeedsLayout];
 }
@@ -87,7 +89,6 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
     [self.textLabel setTextAlignment:NSTextAlignmentCenter];
     [self.textLabel setFont:[UIFont boldSystemFontOfSize:kFontSize]];
-    // Allow any number of lines. Facebook sometimes shows big errors.
     [self.textLabel setNumberOfLines:0];
 }
 
@@ -135,6 +136,8 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)show:(BOOL)animated
 {
+    [self setupViewsAndFrames];
+
     // In previously indicated, send subview to be below another view.
     // This is used when showing below navigation bar
     if (self.viewAboveBanner)
@@ -167,6 +170,25 @@ static const CGFloat kDefaultHideInterval = 2.0;
     }
 }
 
+
+- (void)setupViewsAndFrames
+{
+    UINavigationController *navVC = [[[CVKHierarchySearcher alloc] init] topmostNavigationController];
+    if (navVC && navVC.navigationBar.superview) {
+        self.targetView = navVC.navigationBar.superview;
+        self.viewAboveBanner = navVC.navigationBar;
+    } else {
+        // If there isn't a navigation controller with a bar, show in window instead.
+        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        // Forget the frame convertions, smallest is the height, no doubt
+        CGFloat statusBarHeight = MIN(statusBarFrame.size.width, statusBarFrame.size.height);
+
+        self.additionalTopSpacing = statusBarHeight;
+        self.targetView = window;
+    }
+}
+
 - (void)hide
 {
     [self hide:YES];
@@ -187,40 +209,24 @@ static const CGFloat kDefaultHideInterval = 2.0;
 }
 
 + (instancetype)showAndHideWithText:(NSString *)text
-                          withStyle:(CVKInfoBannerStyle)style
+                              style:(CVKInfoBannerStyle)style
 {
-    return [self showWithText:text withStyle:style andHideAfter:kDefaultHideInterval];
+    return [self showWithText:text style:style andHideAfter:kDefaultHideInterval];
 }
 
 + (instancetype)showWithText:(NSString *)text
-                   withStyle:(CVKInfoBannerStyle)style
+                       style:(CVKInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout
 {
-    CVKInfoBanner *banner = [self showWithText:text andStyle:style];
+    CVKInfoBanner *banner = [self showWithText:text style:style];
     [banner performSelector:@selector(hide) withObject:nil afterDelay:timeout];
     return banner;
 }
 
 + (instancetype)showWithText:(NSString *)text
-                    andStyle:(CVKInfoBannerStyle)style
+                       style:(CVKInfoBannerStyle)style
 {
     CVKInfoBanner *banner = [[[self class] alloc] init];
-
-    UINavigationController *navVC = [[[CVKHierarchySearcher alloc] init] topmostNavigationController];
-    if (navVC && navVC.navigationBar.superview) {
-        banner.targetView = navVC.navigationBar.superview;
-        banner.viewAboveBanner = navVC.navigationBar;
-    } else {
-        // If there isn't a navigation controller with a bar, show in window instead.
-        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-        // Forget the frame convertions, smallest is the height, no doubt
-        CGFloat statusBarHeight = MIN(statusBarFrame.size.width, statusBarFrame.size.height);
-
-        banner.additionalTopSpacing = statusBarHeight;
-        banner.targetView = window;
-    }
-
     [banner setText:text];
     [banner setStyle:style];
 

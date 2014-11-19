@@ -32,22 +32,17 @@ describe(@"CVKInfoBanner view", ^{
     };
 
     it(@"should show compact red one", ^{
-        banner = [CVKInfoBanner showWithText:kShortBannerText andStyle:CVKInfoBannerStyleRed];
+        banner = [CVKInfoBanner showAndHideWithText:kShortBannerText style:CVKInfoBannerStyleRed];
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show long red one", ^{
-        banner = [CVKInfoBanner showWithText:kLongBannerText andStyle:CVKInfoBannerStyleRed];
+        banner = [CVKInfoBanner showAndHideWithText:kLongBannerText style:CVKInfoBannerStyleRed];
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show compact green one", ^{
-        banner = [CVKInfoBanner showWithText:kShortBannerText andStyle:CVKInfoBannerStyleGreen];
-        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
-    });
-
-    it(@"should show long green one", ^{
-        banner = [CVKInfoBanner showWithText:kLongBannerText andStyle:CVKInfoBannerStyleGreen];
+        banner = [CVKInfoBanner showAndHideWithText:kShortBannerText style:CVKInfoBannerStyleGreen];
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 

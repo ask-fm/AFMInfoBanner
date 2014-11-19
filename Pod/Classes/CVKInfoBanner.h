@@ -13,27 +13,21 @@ typedef NS_ENUM(NSUInteger, CVKInfoBannerStyle) {
     CVKInfoBannerStyleGreen,
 };
 
-@interface CVKInfoBanner : UIControl
+@interface CVKInfoBanner : UIView
 
-@property (nonatomic) UIView *targetView;
 @property (nonatomic) CVKInfoBannerStyle style;
-
-- (void)setText:(NSString *)text;
+@property (nonatomic) NSString *text;
 
 - (void)show:(BOOL)animated;
 - (void)hide:(BOOL)animated;
 
 + (instancetype)showWithText:(NSString *)text
-                   withStyle:(CVKInfoBannerStyle)style
+                       style:(CVKInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout;
 
 + (instancetype)showAndHideWithText:(NSString *)text
-                          withStyle:(CVKInfoBannerStyle)style;
-
-+ (instancetype)showWithText:(NSString *)text
-                    andStyle:(CVKInfoBannerStyle)style;
+                              style:(CVKInfoBannerStyle)style;
 
 + (void)hideAll;
-+ (void)hideAllInView:(UIView *)view;
 
 @end
