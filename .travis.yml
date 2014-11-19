@@ -8,4 +8,7 @@ before_install:
   - gem install cocoapods -v '= 0.34.4'
   - cd Example && pod install && cd -
 script:
-- xctool test -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool build-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool run-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 5s,OS=latest"
+  - xctool run-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6,OS=latest"
+  - xctool run-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=latest"
