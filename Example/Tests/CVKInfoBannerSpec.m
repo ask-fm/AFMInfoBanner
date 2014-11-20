@@ -31,18 +31,40 @@ describe(@"CVKInfoBanner view", ^{
                 CGRectGetWidth([[UIScreen mainScreen] bounds])];
     };
 
+    CVKInfoBanner *(^bannerManual)(NSString *, CVKInfoBannerStyle) = ^CVKInfoBanner *(NSString *text, CVKInfoBannerStyle style) {
+        CVKInfoBanner *banner = [[CVKInfoBanner alloc] init];
+        banner.text = text;
+        banner.style = style;
+        [banner show:YES];
+        return banner;
+    };
+
+    CVKInfoBanner *(^bannerFromHelper)(NSString *, CVKInfoBannerStyle) = ^CVKInfoBanner *(NSString *text, CVKInfoBannerStyle style) {
+        return [CVKInfoBanner showAndHideWithText:text style:style];
+    };
+
+
     it(@"should show compact red one", ^{
-        banner = [CVKInfoBanner showAndHideWithText:kShortBannerText style:CVKInfoBannerStyleRed];
+        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleRed);
+        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
+        [banner removeFromSuperview];
+        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleRed);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show long red one", ^{
-        banner = [CVKInfoBanner showAndHideWithText:kLongBannerText style:CVKInfoBannerStyleRed];
+        banner = bannerFromHelper(kLongBannerText, CVKInfoBannerStyleRed);
+        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
+        [banner removeFromSuperview];
+        banner = bannerManual(kLongBannerText, CVKInfoBannerStyleRed);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show compact green one", ^{
-        banner = [CVKInfoBanner showAndHideWithText:kShortBannerText style:CVKInfoBannerStyleGreen];
+        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleGreen);
+        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
+        [banner removeFromSuperview];
+        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleGreen);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
