@@ -17,26 +17,26 @@ describe(@"CVKInfoBanner view", ^{
     __block CVKInfoBanner *banner;
 
     it(@"should show compact red one", ^{
-        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleRed);
+        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
         [banner removeFromSuperview];
-        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleRed);
+        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show long red one", ^{
-        banner = bannerFromHelper(kLongBannerText, CVKInfoBannerStyleRed);
+        banner = bannerFromHelper(kLongBannerText, CVKInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
         [banner removeFromSuperview];
-        banner = bannerManual(kLongBannerText, CVKInfoBannerStyleRed);
+        banner = bannerManual(kLongBannerText, CVKInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show compact green one", ^{
-        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleGreen);
+        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleInfo);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
         [banner removeFromSuperview];
-        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleGreen);
+        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleInfo);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 

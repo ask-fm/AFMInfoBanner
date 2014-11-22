@@ -19,7 +19,7 @@ describe(@"CVKInfoBanner UIAppearance", ^{
         [[CVKInfoBanner appearance] setErrorBackgroundColor:[UIColor blueColor]];
         [[CVKInfoBanner appearance] setErrorTextColor:[UIColor blackColor]];
 
-        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleRed);
+        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
@@ -27,14 +27,14 @@ describe(@"CVKInfoBanner UIAppearance", ^{
         [[CVKInfoBanner appearance] setInfoBackgroundColor:[UIColor blackColor]];
         [[CVKInfoBanner appearance] setInfoTextColor:[UIColor yellowColor]];
 
-        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleGreen);
+        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleInfo);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should configure font", ^{
         [[CVKInfoBanner appearance] setFont:[UIFont systemFontOfSize:20]];
 
-        banner = bannerFromHelper(kLongBannerText, CVKInfoBannerStyleRed);
+        banner = bannerFromHelper(kLongBannerText, CVKInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 

@@ -19,12 +19,12 @@
 
 - (IBAction)showGreen:(id)sender
 {
-    [CVKInfoBanner showAndHideWithText:self.textView.text style:CVKInfoBannerStyleGreen];
+    [CVKInfoBanner showAndHideWithText:self.textView.text style:CVKInfoBannerStyleInfo];
 }
 
 - (IBAction)showRed:(id)sender
 {
-    [CVKInfoBanner showAndHideWithText:self.textView.text style:CVKInfoBannerStyleRed];
+    [CVKInfoBanner showAndHideWithText:self.textView.text style:CVKInfoBannerStyleError];
 }
 
 @end

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, CVKInfoBannerStyle) {
-    CVKInfoBannerStyleRed = 0,
-    CVKInfoBannerStyleGreen,
+    CVKInfoBannerStyleError = 0,
+    CVKInfoBannerStyleInfo,
 };
 
 @interface CVKInfoBanner : UIView

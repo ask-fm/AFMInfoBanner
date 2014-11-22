@@ -63,10 +63,10 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)applyStyle
 {
-    if (self.style == CVKInfoBannerStyleRed) {
+    if (self.style == CVKInfoBannerStyleError) {
         [self setBackgroundColor:self.errorBackgroundColor ?: UIColorFromRGB(kRedBannerColor)];
         [self.textLabel setTextColor:self.errorTextColor ?: UIColorFromRGB(kDefaultTextColor)];
-    } else if (self.style == CVKInfoBannerStyleGreen) {
+    } else if (self.style == CVKInfoBannerStyleInfo) {
         [self setBackgroundColor:self.infoBackgroundColor ?: UIColorFromRGB(kGreenBannerColor)];
         [self.textLabel setTextColor:self.infoTextColor ?: UIColorFromRGB(kDefaultTextColor)];
     }
