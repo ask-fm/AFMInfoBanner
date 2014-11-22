@@ -64,12 +64,13 @@ static const CGFloat kDefaultHideInterval = 2.0;
 - (void)applyStyle
 {
     if (self.style == CVKInfoBannerStyleRed) {
-        [self setBackgroundColor:self.errorBackgroundColor];
-        [self.textLabel setTextColor:self.errorTextColor];
+        [self setBackgroundColor:self.errorBackgroundColor ?: UIColorFromRGB(kRedBannerColor)];
+        [self.textLabel setTextColor:self.errorTextColor ?: UIColorFromRGB(kDefaultTextColor)];
     } else if (self.style == CVKInfoBannerStyleGreen) {
-        [self setBackgroundColor:self.infoBackgroundColor];
-        [self.textLabel setTextColor:self.infoTextColor];
+        [self setBackgroundColor:self.infoBackgroundColor ?: UIColorFromRGB(kGreenBannerColor)];
+        [self.textLabel setTextColor:self.infoTextColor ?: UIColorFromRGB(kDefaultTextColor)];
     }
+    [self.textLabel setFont:self.font ?: [UIFont boldSystemFontOfSize:kFontSize]];
 }
 
 - (void)setText:(NSString *)text
@@ -106,19 +107,12 @@ static const CGFloat kDefaultHideInterval = 2.0;
 - (void)setFont:(UIFont *)font
 {
     _font = font;
-    [self.textLabel setFont:font];
+    [self applyStyle];
 }
 
 - (void)setUp
 {
-    _font = [UIFont boldSystemFontOfSize:kFontSize];
-    _errorBackgroundColor = UIColorFromRGB(kRedBannerColor);
-    _infoBackgroundColor = UIColorFromRGB(kGreenBannerColor);
-    _errorTextColor = UIColorFromRGB(kDefaultTextColor);
-    _infoTextColor = UIColorFromRGB(kDefaultTextColor);
-
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self setBackgroundColor:self.errorBackgroundColor];
 
     UILabel *label = [[UILabel alloc] init];
     [self setTextLabel:label];
@@ -130,10 +124,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 {
     [self.textLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.textLabel setBackgroundColor:[UIColor clearColor]];
-    [self.textLabel setTextColor:self.errorTextColor];
-
     [self.textLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.textLabel setFont:self.font];
     [self.textLabel setNumberOfLines:0];
 }
 
@@ -181,6 +172,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)show:(BOOL)animated
 {
+    [self applyStyle];
     [self setupViewsAndFrames];
 
     // In previously indicated, send subview to be below another view.
@@ -214,7 +206,6 @@ static const CGFloat kDefaultHideInterval = 2.0;
         self.topSpacingConstraint.constant += self.frame.size.height;
     }
 }
-
 
 - (void)setupViewsAndFrames
 {
