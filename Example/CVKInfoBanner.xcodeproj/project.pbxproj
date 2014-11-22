@@ -21,6 +21,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		9C2BCB8B1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BCB8A1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m */; };
+		9CA1D7A41A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A31A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m */; };
 		9CA1D7A71A210EA300A4532C /* CVKTestCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A61A210EA300A4532C /* CVKTestCommons.m */; };
 		D0F598E6472B72651240ABF5 /* libPods-CVKInfoBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC51EFE3F1C130BBB22F730 /* libPods-CVKInfoBanner.a */; };
 		FCA490CF136A88891D5BA91F /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB19A9C3729165085D40A45 /* libPods-Tests.a */; };
@@ -62,6 +63,7 @@
 		712CC540F5FF1404ED2F78A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		94E100D938F584721664E63C /* Pods-CVKInfoBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVKInfoBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVKInfoBanner/Pods-CVKInfoBanner.release.xcconfig"; sourceTree = "<group>"; };
 		9C2BCB8A1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKInfoBannerSpec.m; sourceTree = "<group>"; };
+		9CA1D7A31A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKInfoBannerAppearanceSpec.m; sourceTree = "<group>"; };
 		9CA1D7A51A210EA300A4532C /* CVKTestCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVKTestCommons.h; sourceTree = "<group>"; };
 		9CA1D7A61A210EA300A4532C /* CVKTestCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKTestCommons.m; sourceTree = "<group>"; };
 		BFC51EFE3F1C130BBB22F730 /* libPods-CVKInfoBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CVKInfoBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 			children = (
 				6003F5B6195388D20070C39A /* Supporting Files */,
 				9C2BCB8A1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m */,
+				9CA1D7A31A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m */,
 				9CA1D7A51A210EA300A4532C /* CVKTestCommons.h */,
 				9CA1D7A61A210EA300A4532C /* CVKTestCommons.m */,
 			);
@@ -374,6 +377,7 @@
 			files = (
 				9CA1D7A71A210EA300A4532C /* CVKTestCommons.m in Sources */,
 				9C2BCB8B1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m in Sources */,
+				9CA1D7A41A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
