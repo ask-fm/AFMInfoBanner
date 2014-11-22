@@ -18,6 +18,12 @@ typedef NS_ENUM(NSUInteger, CVKInfoBannerStyle) {
 @property (nonatomic) CVKInfoBannerStyle style;
 @property (nonatomic) NSString *text;
 
+@property (nonatomic) UIFont *font UI_APPEARANCE_SELECTOR;
+@property (nonatomic) UIColor *errorBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic) UIColor *infoBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic) UIColor *errorTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic) UIColor *infoTextColor UI_APPEARANCE_SELECTOR;
+
 - (void)show:(BOOL)animated;
 - (void)hide:(BOOL)animated;
 

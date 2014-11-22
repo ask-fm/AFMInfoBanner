@@ -21,6 +21,7 @@ static const CGFloat kMargin = 10.f;
 static const NSTimeInterval kAnimationDuration = 0.3;
 static const int kRedBannerColor = 0xff0000;
 static const int kGreenBannerColor = 0x008000;
+static const int kDefaultTextColor = 0xffffff;
 static const CGFloat kFontSize = 13.f;
 static const CGFloat kDefaultHideInterval = 2.0;
 
@@ -56,11 +57,19 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)setStyle:(CVKInfoBannerStyle)style
 {
-    if (style == CVKInfoBannerStyleRed)
-        [self setBackgroundColor:UIColorFromRGB(kRedBannerColor)];
-    else if (style == CVKInfoBannerStyleGreen)
-        [self setBackgroundColor:UIColorFromRGB(kGreenBannerColor)];
-    [self setNeedsDisplay];
+    _style = style;
+    [self applyStyle];
+}
+
+- (void)applyStyle
+{
+    if (self.style == CVKInfoBannerStyleRed) {
+        [self setBackgroundColor:self.errorBackgroundColor];
+        [self.textLabel setTextColor:self.errorTextColor];
+    } else if (self.style == CVKInfoBannerStyleGreen) {
+        [self setBackgroundColor:self.infoBackgroundColor];
+        [self.textLabel setTextColor:self.infoTextColor];
+    }
 }
 
 - (void)setText:(NSString *)text
@@ -70,10 +79,46 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [self setNeedsLayout];
 }
 
+- (void)setErrorBackgroundColor:(UIColor *)errorBackgroundColor
+{
+    _errorBackgroundColor = errorBackgroundColor;
+    [self applyStyle];
+}
+
+- (void)setInfoBackgroundColor:(UIColor *)infoBackgroundColor
+{
+    _infoBackgroundColor = infoBackgroundColor;
+    [self applyStyle];
+}
+
+- (void)setErrorTextColor:(UIColor *)errorTextColor
+{
+    _errorTextColor = errorTextColor;
+    [self applyStyle];
+}
+
+- (void)setInfoTextColor:(UIColor *)infoTextColor
+{
+    _infoTextColor = infoTextColor;
+    [self applyStyle];
+}
+
+- (void)setFont:(UIFont *)font
+{
+    _font = font;
+    [self.textLabel setFont:font];
+}
+
 - (void)setUp
 {
+    _font = [UIFont boldSystemFontOfSize:kFontSize];
+    _errorBackgroundColor = UIColorFromRGB(kRedBannerColor);
+    _infoBackgroundColor = UIColorFromRGB(kGreenBannerColor);
+    _errorTextColor = UIColorFromRGB(kDefaultTextColor);
+    _infoTextColor = UIColorFromRGB(kDefaultTextColor);
+
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self setBackgroundColor:[UIColor redColor]];
+    [self setBackgroundColor:self.errorBackgroundColor];
 
     UILabel *label = [[UILabel alloc] init];
     [self setTextLabel:label];
@@ -85,10 +130,10 @@ static const CGFloat kDefaultHideInterval = 2.0;
 {
     [self.textLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.textLabel setBackgroundColor:[UIColor clearColor]];
-    [self.textLabel setTextColor:[UIColor whiteColor]];
+    [self.textLabel setTextColor:self.errorTextColor];
 
     [self.textLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.textLabel setFont:[UIFont boldSystemFontOfSize:kFontSize]];
+    [self.textLabel setFont:self.font];
     [self.textLabel setNumberOfLines:0];
 }
 
