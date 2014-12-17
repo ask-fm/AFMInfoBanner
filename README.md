@@ -1,6 +1,6 @@
 # AFMInfoBanner
 
-[![CI Status](http://img.shields.io/travis/coverback/AFMInfoBanner.svg?style=flat)](https://travis-ci.org/coverback/AFMInfoBanner)
+[![CI Status](http://img.shields.io/travis/ask-fm/AFMInfoBanner.svg?style=flat)](https://travis-ci.org/ask-fm/AFMInfoBanner)
 [![Version](https://img.shields.io/cocoapods/v/AFMInfoBanner.svg?style=flat)](http://cocoadocs.org/docsets/AFMInfoBanner)
 [![License](https://img.shields.io/cocoapods/l/AFMInfoBanner.svg?style=flat)](http://cocoadocs.org/docsets/AFMInfoBanner)
 [![Platform](https://img.shields.io/cocoapods/p/AFMInfoBanner.svg?style=flat)](http://cocoadocs.org/docsets/AFMInfoBanner)
@@ -9,7 +9,7 @@ AFMInfoBanner can be used to unobtrusively notify users about successful or erro
 
 Default error case looks like this:
 
-![Animated Example](https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.gif)
+![Animated Example](https://raw.githubusercontent.com/ask-fm/AFMInfoBanner/master/res/red_banner.gif)
 
 View is trying to find a navigation bar and show itself beneath it. If that fails, it shows from top of the window, adjusting height to be below status bar. View is resized to any text, but auto-hiding interval makes long text hard to read, so it's better to keep it short.
 
@@ -41,7 +41,7 @@ You can use Example project to play around with AFMInfoBanner. To run the exampl
 
 iOS 7 and up.
 
-Uses view controller hierarchy ([CVKHierarchySearcher](https://github.com/coverback/CVKHierarchySearcher)) to find navigation controller, and from it, the navigation bar, and because of that, might not work with custom navigation bar replacements.
+Uses view controller hierarchy ([CVKHierarchySearcher](https://github.com/ask-fm/CVKHierarchySearcher)) to find navigation controller, and from it, the navigation bar, and because of that, might not work with custom navigation bar replacements.
 
 ## Installation
 

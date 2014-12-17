@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
                        Good for notices or error messages. Auto-sizes itself to fit all
                        text. Colours are customisable by UIAppearance.
                        DESC
-  s.homepage         = "https://github.com/coverback/AFMInfoBanner"
-  s.screenshots     = "https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.gif", "https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.png"
+  s.homepage         = "https://github.com/ask-fm/AFMInfoBanner"
+  s.screenshots     = "https://raw.githubusercontent.com/ask-fm/AFMInfoBanner/master/res/red_banner.gif", "https://raw.githubusercontent.com/ask-fm/AFMInfoBanner/master/res/red_banner.png"
   s.license          = 'MIT'
   s.author           = { "Romans Karpelcevs" => "roman@ask.fm" }
-  s.source           = { :git => "https://github.com/coverback/AFMInfoBanner.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/ask-fm/AFMInfoBanner.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/cvbk'
 
   s.platform     = :ios, '7.0'
