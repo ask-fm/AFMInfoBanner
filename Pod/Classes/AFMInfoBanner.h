@@ -3,7 +3,7 @@
 //  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 6/14/13.
-//  Copyright (c) 2013 Romans Karpelcevs. All rights reserved.
+//  Copyright (c) 2013 Ask.fm Europe, Ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

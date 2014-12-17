@@ -50,9 +50,9 @@ it, simply add the following line to your Podfile:
 
     pod 'AFMInfoBanner'
 
-## Author
+## Contact person
 
-Romans Karpelcevs, karpelcev@gmail.com
+Romans Karpelcevs, roman@ask.fm
 
 ## License
 

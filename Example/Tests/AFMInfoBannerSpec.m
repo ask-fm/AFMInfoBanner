@@ -3,7 +3,7 @@
 //  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 18/11/14.
-//  Copyright 2014 Romans Karpelcevs. All rights reserved.
+//  Copyright (c) 2014 Ask.fm Europe, Ltd. All rights reserved.
 //
 
 #import <Specta/Specta.h>

@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/coverback/AFMInfoBanner"
   s.screenshots     = "https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.gif", "https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.png"
   s.license          = 'MIT'
-  s.author           = { "Romans Karpelcevs" => "karpelcev@gmail.com" }
+  s.author           = { "Romans Karpelcevs" => "roman@ask.fm" }
   s.source           = { :git => "https://github.com/coverback/AFMInfoBanner.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/cvbk'
 
