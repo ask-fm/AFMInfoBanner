@@ -1,6 +1,6 @@
 //
 //  main.m
-//  CVKInfoBanner
+//  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 11/17/2014.
 //  Copyright (c) 2014 Romans Karpelcevs. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CVKAppDelegate.h"
+#import "AFMAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([CVKAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AFMAppDelegate class]));
     }
 }

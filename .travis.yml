@@ -6,7 +6,7 @@ before_install:
   - gem install cocoapods -v '= 0.35.0'
   - cd Example && pod install && cd -
 script:
-  - xctool build-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool run-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 5s,OS=latest"
-  - xctool run-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6,OS=latest"
-  - xctool run-tests -workspace Example/CVKInfoBanner.xcworkspace -scheme CVKInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=latest"
+  - xctool build-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool run-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 5s,OS=latest"
+  - xctool run-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6,OS=latest"
+  - xctool run-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=latest"

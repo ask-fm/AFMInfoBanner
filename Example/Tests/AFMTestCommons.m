@@ -1,12 +1,12 @@
 //
-//  CVKTestCommons.m
-//  CVKInfoBanner
+//  AFMTestCommons.m
+//  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 22/11/14.
 //  Copyright (c) 2014 Romans Karpelcevs. All rights reserved.
 //
 
-#import "CVKTestCommons.h"
+#import "AFMTestCommons.h"
 
 NSString *const kShortBannerText = @"Short error text";
 NSString *const kLongBannerText = @"Longer text which definitely would be shown on multiple lines and wrap.";
@@ -25,16 +25,16 @@ NSString *deviceSpecificName()
             CGRectGetWidth([[UIScreen mainScreen] bounds])];
 }
 
-CVKInfoBanner *bannerManual(NSString *text, CVKInfoBannerStyle style)
+AFMInfoBanner *bannerManual(NSString *text, AFMInfoBannerStyle style)
 {
-    CVKInfoBanner *banner = [[CVKInfoBanner alloc] init];
+    AFMInfoBanner *banner = [[AFMInfoBanner alloc] init];
     banner.text = text;
     banner.style = style;
     [banner show:YES];
     return banner;
 }
 
-CVKInfoBanner *bannerFromHelper(NSString *text, CVKInfoBannerStyle style)
+AFMInfoBanner *bannerFromHelper(NSString *text, AFMInfoBannerStyle style)
 {
-    return [CVKInfoBanner showAndHideWithText:text style:style];
+    return [AFMInfoBanner showAndHideWithText:text style:style];
 }

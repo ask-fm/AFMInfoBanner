@@ -1,13 +1,13 @@
 //
-//  CVKInfoBanner.m
-//  CVKInfoBanner
+//  AFMInfoBanner.m
+//  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 6/14/13.
 //  Copyright (c) 2013 Romans Karpelcevs. All rights reserved.
 //
 
 #import <CVKHierarchySearcher/CVKHierarchySearcher.h>
-#import "CVKInfoBanner.h"
+#import "AFMInfoBanner.h"
 
 #ifdef UIColorFromRGB
     #undef UIColorFromRGB
@@ -25,7 +25,7 @@ static const int kDefaultTextColor = 0xffffff;
 static const CGFloat kFontSize = 13.f;
 static const CGFloat kDefaultHideInterval = 2.0;
 
-@interface CVKInfoBanner ()
+@interface AFMInfoBanner ()
 
 @property (nonatomic) UILabel *textLabel;
 @property (nonatomic) UIView *targetView;
@@ -35,7 +35,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 @end
 
-@implementation CVKInfoBanner
+@implementation AFMInfoBanner
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -55,7 +55,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
     return self;
 }
 
-- (void)setStyle:(CVKInfoBannerStyle)style
+- (void)setStyle:(AFMInfoBannerStyle)style
 {
     _style = style;
     [self applyStyle];
@@ -63,10 +63,10 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)applyStyle
 {
-    if (self.style == CVKInfoBannerStyleError) {
+    if (self.style == AFMInfoBannerStyleError) {
         [self setBackgroundColor:self.errorBackgroundColor ?: UIColorFromRGB(kRedBannerColor)];
         [self.textLabel setTextColor:self.errorTextColor ?: UIColorFromRGB(kDefaultTextColor)];
-    } else if (self.style == CVKInfoBannerStyleInfo) {
+    } else if (self.style == AFMInfoBannerStyleInfo) {
         [self setBackgroundColor:self.infoBackgroundColor ?: UIColorFromRGB(kGreenBannerColor)];
         [self.textLabel setTextColor:self.infoTextColor ?: UIColorFromRGB(kDefaultTextColor)];
     }
@@ -245,24 +245,24 @@ static const CGFloat kDefaultHideInterval = 2.0;
 }
 
 + (instancetype)showAndHideWithText:(NSString *)text
-                              style:(CVKInfoBannerStyle)style
+                              style:(AFMInfoBannerStyle)style
 {
     return [self showWithText:text style:style andHideAfter:kDefaultHideInterval];
 }
 
 + (instancetype)showWithText:(NSString *)text
-                       style:(CVKInfoBannerStyle)style
+                       style:(AFMInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout
 {
-    CVKInfoBanner *banner = [self showWithText:text style:style];
+    AFMInfoBanner *banner = [self showWithText:text style:style];
     [banner performSelector:@selector(hide) withObject:nil afterDelay:timeout];
     return banner;
 }
 
 + (instancetype)showWithText:(NSString *)text
-                       style:(CVKInfoBannerStyle)style
+                       style:(AFMInfoBannerStyle)style
 {
-    CVKInfoBanner *banner = [[[self class] alloc] init];
+    AFMInfoBanner *banner = [[[self class] alloc] init];
     [banner setText:text];
     [banner setStyle:style];
 
@@ -280,7 +280,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 + (void)hideAllInView:(UIView *)view
 {
-    for (CVKInfoBanner *subview in view.subviews) {
+    for (AFMInfoBanner *subview in view.subviews) {
         if ([subview isKindOfClass:[self class]]) {
             [subview hide:NO];
         }

@@ -12,18 +12,18 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* CVKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* CVKAppDelegate.m */; };
+		6003F59E195388D20070C39A /* AFMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* AFMAppDelegate.m */; };
 		6003F5A1195388D20070C39A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F59F195388D20070C39A /* Main.storyboard */; };
-		6003F5A7195388D20070C39A /* CVKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* CVKViewController.m */; };
+		6003F5A7195388D20070C39A /* AFMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* AFMViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		9C2BCB8B1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BCB8A1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m */; };
-		9CA1D7A41A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A31A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m */; };
-		9CA1D7A71A210EA300A4532C /* CVKTestCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A61A210EA300A4532C /* CVKTestCommons.m */; };
-		D0F598E6472B72651240ABF5 /* libPods-CVKInfoBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC51EFE3F1C130BBB22F730 /* libPods-CVKInfoBanner.a */; };
+		9C2BCB8B1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BCB8A1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m */; };
+		9CA1D7A41A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A31A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m */; };
+		9CA1D7A71A210EA300A4532C /* AFMTestCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A61A210EA300A4532C /* AFMTestCommons.m */; };
+		D0F598E6472B72651240ABF5 /* libPods-AFMInfoBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC51EFE3F1C130BBB22F730 /* libPods-AFMInfoBanner.a */; };
 		FCA490CF136A88891D5BA91F /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB19A9C3729165085D40A45 /* libPods-Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -33,26 +33,26 @@
 			containerPortal = 6003F582195388D10070C39A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6003F589195388D20070C39A;
-			remoteInfo = CVKInfoBanner;
+			remoteInfo = AFMInfoBanner;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		44B93C0CDC30C3A2B4D7197E /* Pods-CVKInfoBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVKInfoBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVKInfoBanner/Pods-CVKInfoBanner.debug.xcconfig"; sourceTree = "<group>"; };
+		44B93C0CDC30C3A2B4D7197E /* Pods-AFMInfoBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMInfoBanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFMInfoBanner/Pods-AFMInfoBanner.debug.xcconfig"; sourceTree = "<group>"; };
 		5E5FD7AB42C66077524B3031 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* CVKInfoBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVKInfoBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* AFMInfoBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFMInfoBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* CVKInfoBanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CVKInfoBanner-Info.plist"; sourceTree = "<group>"; };
+		6003F595195388D20070C39A /* AFMInfoBanner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AFMInfoBanner-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* CVKInfoBanner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CVKInfoBanner-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* CVKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVKAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* CVKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVKAppDelegate.m; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* AFMInfoBanner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFMInfoBanner-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59C195388D20070C39A /* AFMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFMAppDelegate.h; sourceTree = "<group>"; };
+		6003F59D195388D20070C39A /* AFMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFMAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A0195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* CVKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVKViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* CVKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVKViewController.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* AFMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFMViewController.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* AFMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFMViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,14 +61,14 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6EB19A9C3729165085D40A45 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		712CC540F5FF1404ED2F78A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		94E100D938F584721664E63C /* Pods-CVKInfoBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVKInfoBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVKInfoBanner/Pods-CVKInfoBanner.release.xcconfig"; sourceTree = "<group>"; };
-		9C2BCB8A1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKInfoBannerSpec.m; sourceTree = "<group>"; };
-		9CA1D7A31A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKInfoBannerAppearanceSpec.m; sourceTree = "<group>"; };
-		9CA1D7A51A210EA300A4532C /* CVKTestCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVKTestCommons.h; sourceTree = "<group>"; };
-		9CA1D7A61A210EA300A4532C /* CVKTestCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKTestCommons.m; sourceTree = "<group>"; };
-		BFC51EFE3F1C130BBB22F730 /* libPods-CVKInfoBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CVKInfoBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E100D938F584721664E63C /* Pods-AFMInfoBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMInfoBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFMInfoBanner/Pods-AFMInfoBanner.release.xcconfig"; sourceTree = "<group>"; };
+		9C2BCB8A1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMInfoBannerSpec.m; sourceTree = "<group>"; };
+		9CA1D7A31A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMInfoBannerAppearanceSpec.m; sourceTree = "<group>"; };
+		9CA1D7A51A210EA300A4532C /* AFMTestCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMTestCommons.h; sourceTree = "<group>"; };
+		9CA1D7A61A210EA300A4532C /* AFMTestCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMTestCommons.m; sourceTree = "<group>"; };
+		BFC51EFE3F1C130BBB22F730 /* libPods-AFMInfoBanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFMInfoBanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2D0DCE3845514F565FFCF6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CC17BA0748FC6853F85B01C4 /* CVKInfoBanner.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CVKInfoBanner.podspec; path = ../CVKInfoBanner.podspec; sourceTree = "<group>"; };
+		CC17BA0748FC6853F85B01C4 /* AFMInfoBanner.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AFMInfoBanner.podspec; path = ../AFMInfoBanner.podspec; sourceTree = "<group>"; };
 		D9CD06EBC0529E7104F3094B /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +80,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				D0F598E6472B72651240ABF5 /* libPods-CVKInfoBanner.a in Frameworks */,
+				D0F598E6472B72651240ABF5 /* libPods-AFMInfoBanner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +101,8 @@
 		21CF3DBBE8A12C0EB9F0C817 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				44B93C0CDC30C3A2B4D7197E /* Pods-CVKInfoBanner.debug.xcconfig */,
-				94E100D938F584721664E63C /* Pods-CVKInfoBanner.release.xcconfig */,
+				44B93C0CDC30C3A2B4D7197E /* Pods-AFMInfoBanner.debug.xcconfig */,
+				94E100D938F584721664E63C /* Pods-AFMInfoBanner.release.xcconfig */,
 				D9CD06EBC0529E7104F3094B /* Pods-Tests.debug.xcconfig */,
 				5E5FD7AB42C66077524B3031 /* Pods-Tests.release.xcconfig */,
 			);
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* CVKInfoBanner */,
+				6003F593195388D20070C39A /* AFMInfoBanner */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -124,7 +124,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* CVKInfoBanner.app */,
+				6003F58A195388D20070C39A /* AFMInfoBanner.app */,
 				6003F5AE195388D20070C39A /* Tests.xctest */,
 			);
 			name = Products;
@@ -137,33 +137,33 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				BFC51EFE3F1C130BBB22F730 /* libPods-CVKInfoBanner.a */,
+				BFC51EFE3F1C130BBB22F730 /* libPods-AFMInfoBanner.a */,
 				6EB19A9C3729165085D40A45 /* libPods-Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6003F593195388D20070C39A /* CVKInfoBanner */ = {
+		6003F593195388D20070C39A /* AFMInfoBanner */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* CVKAppDelegate.h */,
-				6003F59D195388D20070C39A /* CVKAppDelegate.m */,
+				6003F59C195388D20070C39A /* AFMAppDelegate.h */,
+				6003F59D195388D20070C39A /* AFMAppDelegate.m */,
 				6003F59F195388D20070C39A /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* CVKViewController.h */,
-				6003F5A6195388D20070C39A /* CVKViewController.m */,
+				6003F5A5195388D20070C39A /* AFMViewController.h */,
+				6003F5A6195388D20070C39A /* AFMViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
-			path = CVKInfoBanner;
+			path = AFMInfoBanner;
 			sourceTree = "<group>";
 		};
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* CVKInfoBanner-Info.plist */,
+				6003F595195388D20070C39A /* AFMInfoBanner-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* CVKInfoBanner-Prefix.pch */,
+				6003F59B195388D20070C39A /* AFMInfoBanner-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -172,10 +172,10 @@
 			isa = PBXGroup;
 			children = (
 				6003F5B6195388D20070C39A /* Supporting Files */,
-				9C2BCB8A1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m */,
-				9CA1D7A31A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m */,
-				9CA1D7A51A210EA300A4532C /* CVKTestCommons.h */,
-				9CA1D7A61A210EA300A4532C /* CVKTestCommons.m */,
+				9C2BCB8A1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m */,
+				9CA1D7A31A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m */,
+				9CA1D7A51A210EA300A4532C /* AFMTestCommons.h */,
+				9CA1D7A61A210EA300A4532C /* AFMTestCommons.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				CC17BA0748FC6853F85B01C4 /* CVKInfoBanner.podspec */,
+				CC17BA0748FC6853F85B01C4 /* AFMInfoBanner.podspec */,
 				CB2D0DCE3845514F565FFCF6 /* README.md */,
 				712CC540F5FF1404ED2F78A5 /* LICENSE */,
 			);
@@ -203,9 +203,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6003F589195388D20070C39A /* CVKInfoBanner */ = {
+		6003F589195388D20070C39A /* AFMInfoBanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "CVKInfoBanner" */;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "AFMInfoBanner" */;
 			buildPhases = (
 				080B1208590A6E975A20A62C /* Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
@@ -217,9 +217,9 @@
 			);
 			dependencies = (
 			);
-			name = CVKInfoBanner;
-			productName = CVKInfoBanner;
-			productReference = 6003F58A195388D20070C39A /* CVKInfoBanner.app */;
+			name = AFMInfoBanner;
+			productName = AFMInfoBanner;
+			productReference = 6003F58A195388D20070C39A /* AFMInfoBanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* Tests */ = {
@@ -238,7 +238,7 @@
 				6003F5B4195388D20070C39A /* PBXTargetDependency */,
 			);
 			name = Tests;
-			productName = CVKInfoBannerTests;
+			productName = AFMInfoBannerTests;
 			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -248,7 +248,7 @@
 		6003F582195388D10070C39A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CVK;
+				CLASSPREFIX = AFM;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Romans Karpelcevs";
 				TargetAttributes = {
@@ -257,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "CVKInfoBanner" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "AFMInfoBanner" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -270,7 +270,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6003F589195388D20070C39A /* CVKInfoBanner */,
+				6003F589195388D20070C39A /* AFMInfoBanner */,
 				6003F5AD195388D20070C39A /* Tests */,
 			);
 		};
@@ -325,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVKInfoBanner/Pods-CVKInfoBanner-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AFMInfoBanner/Pods-AFMInfoBanner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5F7CF733761472373C497FBE /* Copy Pods Resources */ = {
@@ -365,8 +365,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* CVKAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* CVKViewController.m in Sources */,
+				6003F59E195388D20070C39A /* AFMAppDelegate.m in Sources */,
+				6003F5A7195388D20070C39A /* AFMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,9 +375,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA1D7A71A210EA300A4532C /* CVKTestCommons.m in Sources */,
-				9C2BCB8B1A1B4BA000DD0B82 /* CVKInfoBannerSpec.m in Sources */,
-				9CA1D7A41A210E5700A4532C /* CVKInfoBannerAppearanceSpec.m in Sources */,
+				9CA1D7A71A210EA300A4532C /* AFMTestCommons.m in Sources */,
+				9C2BCB8B1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m in Sources */,
+				9CA1D7A41A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +386,7 @@
 /* Begin PBXTargetDependency section */
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* CVKInfoBanner */;
+			target = 6003F589195388D20070C39A /* AFMInfoBanner */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -493,13 +493,13 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44B93C0CDC30C3A2B4D7197E /* Pods-CVKInfoBanner.debug.xcconfig */;
+			baseConfigurationReference = 44B93C0CDC30C3A2B4D7197E /* Pods-AFMInfoBanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CVKInfoBanner/CVKInfoBanner-Prefix.pch";
-				INFOPLIST_FILE = "CVKInfoBanner/CVKInfoBanner-Info.plist";
+				GCC_PREFIX_HEADER = "AFMInfoBanner/AFMInfoBanner-Prefix.pch";
+				INFOPLIST_FILE = "AFMInfoBanner/AFMInfoBanner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -508,13 +508,13 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94E100D938F584721664E63C /* Pods-CVKInfoBanner.release.xcconfig */;
+			baseConfigurationReference = 94E100D938F584721664E63C /* Pods-AFMInfoBanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CVKInfoBanner/CVKInfoBanner-Prefix.pch";
-				INFOPLIST_FILE = "CVKInfoBanner/CVKInfoBanner-Info.plist";
+				GCC_PREFIX_HEADER = "AFMInfoBanner/AFMInfoBanner-Prefix.pch";
+				INFOPLIST_FILE = "AFMInfoBanner/AFMInfoBanner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -525,7 +525,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9CD06EBC0529E7104F3094B /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CVKInfoBanner.app/CVKInfoBanner";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AFMInfoBanner.app/AFMInfoBanner";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -548,7 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E5FD7AB42C66077524B3031 /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CVKInfoBanner.app/CVKInfoBanner";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AFMInfoBanner.app/AFMInfoBanner";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -566,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "CVKInfoBanner" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "AFMInfoBanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5BD195388D20070C39A /* Debug */,
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "CVKInfoBanner" */ = {
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "AFMInfoBanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C0195388D20070C39A /* Debug */,

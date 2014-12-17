@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "CVKInfoBanner"
+  s.name             = "AFMInfoBanner"
   s.version          = "1.0.0"
   s.summary          = "Easy to use auto-hiding notice bar below Navigation Bar."
   s.description      = <<-DESC
@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
                        Good for notices or error messages. Auto-sizes itself to fit all
                        text. Colours are customisable by UIAppearance.
                        DESC
-  s.homepage         = "https://github.com/coverback/CVKInfoBanner"
-  s.screenshots     = "https://raw.githubusercontent.com/coverback/CVKInfoBanner/master/res/red_banner.gif", "https://raw.githubusercontent.com/coverback/CVKInfoBanner/master/res/red_banner.png"
+  s.homepage         = "https://github.com/coverback/AFMInfoBanner"
+  s.screenshots     = "https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.gif", "https://raw.githubusercontent.com/coverback/AFMInfoBanner/master/res/red_banner.png"
   s.license          = 'MIT'
   s.author           = { "Romans Karpelcevs" => "karpelcev@gmail.com" }
-  s.source           = { :git => "https://github.com/coverback/CVKInfoBanner.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/coverback/AFMInfoBanner.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/cvbk'
 
   s.platform     = :ios, '7.0'

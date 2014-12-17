@@ -29,7 +29,7 @@
         <!--View Controller-->
         <scene sceneID="ihv-Dc-DW4">
             <objects>
-                <viewController id="2Nt-hV-c3s" customClass="CVKViewController" sceneMemberID="viewController">
+                <viewController id="2Nt-hV-c3s" customClass="AFMViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dow-XN-MxK"/>
                         <viewControllerLayoutGuide type="bottom" id="eei-IS-srW"/>

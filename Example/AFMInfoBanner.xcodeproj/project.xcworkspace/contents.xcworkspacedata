@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CVKInfoBanner.xcodeproj">
+      location = "self:AFMInfoBanner.xcodeproj">
    </FileRef>
 </Workspace>

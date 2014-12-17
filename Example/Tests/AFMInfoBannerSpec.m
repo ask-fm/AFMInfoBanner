@@ -1,6 +1,6 @@
 //
-//  CVKInfoBannerSpec.m
-//  CVKInfoBanner
+//  AFMInfoBannerSpec.m
+//  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 18/11/14.
 //  Copyright 2014 Romans Karpelcevs. All rights reserved.
@@ -8,35 +8,35 @@
 
 #import <Specta/Specta.h>
 #import <Expecta+Snapshots/EXPMatchers+FBSnapshotTest.h>
-#import "CVKInfoBanner.h"
-#import "CVKTestCommons.h"
+#import "AFMInfoBanner.h"
+#import "AFMTestCommons.h"
 
-SpecBegin(CVKInfoBanner)
+SpecBegin(AFMInfoBanner)
 
-describe(@"CVKInfoBanner view", ^{
-    __block CVKInfoBanner *banner;
+describe(@"AFMInfoBanner view", ^{
+    __block AFMInfoBanner *banner;
 
     it(@"should show compact red one", ^{
-        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleError);
+        banner = bannerFromHelper(kShortBannerText, AFMInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
         [banner removeFromSuperview];
-        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleError);
+        banner = bannerManual(kShortBannerText, AFMInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show long red one", ^{
-        banner = bannerFromHelper(kLongBannerText, CVKInfoBannerStyleError);
+        banner = bannerFromHelper(kLongBannerText, AFMInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
         [banner removeFromSuperview];
-        banner = bannerManual(kLongBannerText, CVKInfoBannerStyleError);
+        banner = bannerManual(kLongBannerText, AFMInfoBannerStyleError);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
     it(@"should show compact green one", ^{
-        banner = bannerFromHelper(kShortBannerText, CVKInfoBannerStyleInfo);
+        banner = bannerFromHelper(kShortBannerText, AFMInfoBannerStyleInfo);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
         [banner removeFromSuperview];
-        banner = bannerManual(kShortBannerText, CVKInfoBannerStyleInfo);
+        banner = bannerManual(kShortBannerText, AFMInfoBannerStyleInfo);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 

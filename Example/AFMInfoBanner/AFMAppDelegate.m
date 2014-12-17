@@ -1,14 +1,14 @@
 //
-//  CVKAppDelegate.m
-//  CVKInfoBanner
+//  AFMAppDelegate.m
+//  AFMInfoBanner
 //
 //  Created by CocoaPods on 11/17/2014.
 //  Copyright (c) 2014 Romans Karpelcevs. All rights reserved.
 //
 
-#import "CVKAppDelegate.h"
+#import "AFMAppDelegate.h"
 
-@implementation CVKAppDelegate
+@implementation AFMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

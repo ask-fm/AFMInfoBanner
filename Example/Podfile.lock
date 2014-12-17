@@ -1,7 +1,7 @@
 PODS:
-  - CVKHierarchySearcher (0.1.0)
-  - CVKInfoBanner (1.0.0):
+  - AFMInfoBanner (1.0.0):
     - CVKHierarchySearcher (~> 0.1)
+  - CVKHierarchySearcher (0.1.0)
   - Expecta (0.3.1)
   - Expecta+Snapshots (1.3.0):
     - Expecta
@@ -10,14 +10,14 @@ PODS:
   - Specta (0.3.0.beta1)
 
 DEPENDENCIES:
-  - CVKInfoBanner (from `../`)
+  - AFMInfoBanner (from `../`)
   - Expecta
   - Expecta+Snapshots
   - FBSnapshotTestCase
   - Specta (from `https://github.com/specta/specta.git`, tag `v0.3.0.beta1`)
 
 EXTERNAL SOURCES:
-  CVKInfoBanner:
+  AFMInfoBanner:
     :path: ../
   Specta:
     :git: https://github.com/specta/specta.git
@@ -29,8 +29,8 @@ CHECKOUT OPTIONS:
     :tag: v0.3.0.beta1
 
 SPEC CHECKSUMS:
+  AFMInfoBanner: 38379dcd9f775f2c5912029b9f6c0462a4451517
   CVKHierarchySearcher: 72dd17faec58964749f36a47bb03253ee7048da9
-  CVKInfoBanner: 0157dcc3e84907dad50aca8d41a4ec1b8ad99080
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
   Expecta+Snapshots: 0ec8bd543329a3944f5e5dc2a5cb220c3dde4ab0
   FBSnapshotTestCase: f9f225b5ba11c8d8c09075590490df16314e4d62

@@ -1,6 +1,6 @@
 //
-//  CVKInfoBanner.h
-//  CVKInfoBanner
+//  AFMInfoBanner.h
+//  AFMInfoBanner
 //
 //  Created by Romans Karpelcevs on 6/14/13.
 //  Copyright (c) 2013 Romans Karpelcevs. All rights reserved.
@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, CVKInfoBannerStyle) {
-    CVKInfoBannerStyleError = 0,
-    CVKInfoBannerStyleInfo,
+typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
+    AFMInfoBannerStyleError = 0,
+    AFMInfoBannerStyleInfo,
 };
 
-@interface CVKInfoBanner : UIView
+@interface AFMInfoBanner : UIView
 
-@property (nonatomic) CVKInfoBannerStyle style;
+@property (nonatomic) AFMInfoBannerStyle style;
 @property (nonatomic) NSString *text;
 
 @property (nonatomic) UIFont *font UI_APPEARANCE_SELECTOR;
@@ -28,11 +28,11 @@ typedef NS_ENUM(NSUInteger, CVKInfoBannerStyle) {
 - (void)hide:(BOOL)animated;
 
 + (instancetype)showWithText:(NSString *)text
-                       style:(CVKInfoBannerStyle)style
+                       style:(AFMInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout;
 
 + (instancetype)showAndHideWithText:(NSString *)text
-                              style:(CVKInfoBannerStyle)style;
+                              style:(AFMInfoBannerStyle)style;
 
 + (void)hideAll;
 
