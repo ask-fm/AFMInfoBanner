@@ -41,7 +41,9 @@ You can use Example project to play around with AFMInfoBanner. To run the exampl
 
 iOS 7 and up.
 
-Uses view controller hierarchy ([CVKHierarchySearcher](https://github.com/coverback/CVKHierarchySearcher)) to find navigation controller, and from it, the navigation bar, and because of that, might not work with custom navigation bar replacements.
+Usage of `UINavigationBar` or `UINavigationController` for navigation bar.
+
+Algorithm uses view controller hierarchy ([CVKHierarchySearcher](https://github.com/coverback/CVKHierarchySearcher)) to find navigation bar on the topmost view controller. First it checks the topmost controller's first level of subviews for `UINavigationBar`. If this fails, searches for topmost available `UINavigationController`. If that fails as well, shows from the status bar. Because of this logic, might work strangely with custom navigation bar replacements.
 
 ## Installation
 
