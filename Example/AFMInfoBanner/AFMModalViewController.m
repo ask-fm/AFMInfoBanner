@@ -1,21 +1,21 @@
 //
-//  AFMViewController.m
+//  AFMModalViewController.m
 //  AFMInfoBanner
 //
-//  Created by Romans Karpelcevs on 11/17/2014.
-//  Copyright (c) 2014 Ask.fm Europe, Ltd. All rights reserved.
+//  Created by Romans Karpelcevs on 10/03/15.
+//  Copyright (c) 2015 Romans Karpelcevs. All rights reserved.
 //
 
 #import <AFMInfoBanner.h>
-#import "AFMViewController.h"
+#import "AFMModalViewController.h"
 
-@interface AFMViewController ()
+@interface AFMModalViewController ()
 
 @property (nonatomic) IBOutlet UITextView *textView;
 
 @end
 
-@implementation AFMViewController
+@implementation AFMModalViewController
 
 - (IBAction)showGreen:(id)sender
 {
@@ -25,12 +25,6 @@
 - (IBAction)showRed:(id)sender
 {
     [AFMInfoBanner showAndHideWithText:self.textView.text style:AFMInfoBannerStyleError];
-}
-
-- (IBAction)presentModal:(id)sender
-{
-    UIViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"modalVC"];
-    [self presentViewController:modalVC animated:YES completion:nil];
 }
 
 - (IBAction)dismiss:(id)sender

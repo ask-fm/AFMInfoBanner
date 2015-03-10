@@ -21,6 +21,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		9C2BCB8B1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BCB8A1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m */; };
+		9C406A061AAF258F00943AE1 /* AFMModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C406A051AAF258F00943AE1 /* AFMModalViewController.m */; };
+		9C406A091AAF301400943AE1 /* AFMInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C406A081AAF301400943AE1 /* AFMInitialViewController.m */; };
 		9CA1D7A41A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A31A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m */; };
 		9CA1D7A71A210EA300A4532C /* AFMTestCommons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1D7A61A210EA300A4532C /* AFMTestCommons.m */; };
 		D0F598E6472B72651240ABF5 /* libPods-AFMInfoBanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC51EFE3F1C130BBB22F730 /* libPods-AFMInfoBanner.a */; };
@@ -63,6 +65,10 @@
 		712CC540F5FF1404ED2F78A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		94E100D938F584721664E63C /* Pods-AFMInfoBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFMInfoBanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFMInfoBanner/Pods-AFMInfoBanner.release.xcconfig"; sourceTree = "<group>"; };
 		9C2BCB8A1A1B4BA000DD0B82 /* AFMInfoBannerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMInfoBannerSpec.m; sourceTree = "<group>"; };
+		9C406A041AAF258E00943AE1 /* AFMModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMModalViewController.h; sourceTree = "<group>"; };
+		9C406A051AAF258F00943AE1 /* AFMModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMModalViewController.m; sourceTree = "<group>"; };
+		9C406A071AAF301400943AE1 /* AFMInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMInitialViewController.h; sourceTree = "<group>"; };
+		9C406A081AAF301400943AE1 /* AFMInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMInitialViewController.m; sourceTree = "<group>"; };
 		9CA1D7A31A210E5700A4532C /* AFMInfoBannerAppearanceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMInfoBannerAppearanceSpec.m; sourceTree = "<group>"; };
 		9CA1D7A51A210EA300A4532C /* AFMTestCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMTestCommons.h; sourceTree = "<group>"; };
 		9CA1D7A61A210EA300A4532C /* AFMTestCommons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMTestCommons.m; sourceTree = "<group>"; };
@@ -151,6 +157,10 @@
 				6003F59F195388D20070C39A /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* AFMViewController.h */,
 				6003F5A6195388D20070C39A /* AFMViewController.m */,
+				9C406A041AAF258E00943AE1 /* AFMModalViewController.h */,
+				9C406A051AAF258F00943AE1 /* AFMModalViewController.m */,
+				9C406A071AAF301400943AE1 /* AFMInitialViewController.h */,
+				9C406A081AAF301400943AE1 /* AFMInitialViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -366,8 +376,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* AFMAppDelegate.m in Sources */,
+				9C406A091AAF301400943AE1 /* AFMInitialViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* AFMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				9C406A061AAF258F00943AE1 /* AFMModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
