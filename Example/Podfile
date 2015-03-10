@@ -7,7 +7,7 @@ end
 target 'Tests', :exclusive => true do
   pod "AFMInfoBanner", :path => "../"
 
-  pod 'Specta', :git => 'https://github.com/specta/specta.git', :tag => 'v0.3.0.beta1'
+  pod 'Specta'
   pod 'Expecta'
   pod 'FBSnapshotTestCase'
   pod 'Expecta+Snapshots'
