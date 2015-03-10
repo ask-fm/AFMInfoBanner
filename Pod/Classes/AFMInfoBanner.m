@@ -209,20 +209,37 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)setupViewsAndFrames
 {
-    UINavigationController *navVC = [[[CVKHierarchySearcher alloc] init] topmostNavigationController];
-    if (navVC && navVC.navigationBar.superview) {
-        self.targetView = navVC.navigationBar.superview;
-        self.viewAboveBanner = navVC.navigationBar;
+    CVKHierarchySearcher *searcher = [[CVKHierarchySearcher alloc] init];
+    UIViewController *topmostVC = [searcher topmostViewController];
+    UINavigationBar *possibleBar = [self navigationBarFor:topmostVC];
+    if (possibleBar) {
+        [self setupViewsForNavigationBar:possibleBar];
     } else {
-        // If there isn't a navigation controller with a bar, show in window instead.
-        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-        // Forget the frame convertions, smallest is the height, no doubt
-        CGFloat statusBarHeight = MIN(statusBarFrame.size.width, statusBarFrame.size.height);
-
-        self.additionalTopSpacing = statusBarHeight;
-        self.targetView = window;
+        UINavigationController *navVC = [searcher topmostNavigationController];
+        if (navVC && navVC.navigationBar.superview) {
+            [self setupViewsForNavigationBar:navVC.navigationBar];
+        } else {
+            [self setupViewsToShowInWindow];
+        }
     }
+}
+
+- (void)setupViewsForNavigationBar:(UINavigationBar *)possibleBar
+{
+    self.targetView = possibleBar.superview;
+    self.viewAboveBanner = possibleBar;
+}
+
+- (void)setupViewsToShowInWindow
+{
+    // If there isn't a navigation controller with a bar, show in window instead.
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    // Forget the frame convertions, smallest is the height, no doubt
+    CGFloat statusBarHeight = MIN(statusBarFrame.size.width, statusBarFrame.size.height);
+
+    self.additionalTopSpacing = statusBarHeight;
+    self.targetView = window;
 }
 
 - (void)hide
@@ -285,6 +302,16 @@ static const CGFloat kDefaultHideInterval = 2.0;
             [subview hide:NO];
         }
     }
+}
+
+- (UINavigationBar *)navigationBarFor:(UIViewController *)viewController
+{
+    for (UIView *view in viewController.view.subviews) {
+        if ([view isKindOfClass:[UINavigationBar class]]) {
+            return (UINavigationBar *)view;
+        }
+    }
+    return nil;
 }
 
 @end
