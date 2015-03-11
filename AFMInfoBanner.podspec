@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AFMInfoBanner"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "Easy to use auto-hiding notice bar below Navigation Bar."
   s.description      = <<-DESC
                        Red or green banner with text sliding from below the Navigation Bar
@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes'
   s.frameworks = 'UIKit'
-  s.dependency 'CVKHierarchySearcher', '~> 0.1'
+  s.dependency 'CVKHierarchySearcher', '~> 0.2'
 end
