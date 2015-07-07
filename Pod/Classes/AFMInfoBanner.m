@@ -117,6 +117,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
     UILabel *label = [[UILabel alloc] init];
     [self setTextLabel:label];
     [self configureLabel];
+    [self configureTaps];
     [self addSubview:label];
 }
 
@@ -126,6 +127,18 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [self.textLabel setBackgroundColor:[UIColor clearColor]];
     [self.textLabel setTextAlignment:NSTextAlignmentCenter];
     [self.textLabel setNumberOfLines:0];
+}
+
+- (void)configureTaps
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
+    [self addGestureRecognizer:tap];
+}
+
+- (void)handleTap
+{
+    if (self.tappedBlock)
+        self.tappedBlock();
 }
 
 - (void)updateConstraints

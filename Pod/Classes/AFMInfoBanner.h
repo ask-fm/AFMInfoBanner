@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
 @property (nonatomic) AFMInfoBannerStyle style;
 @property (nonatomic) NSString *text;
 
+@property (nonatomic, copy) void (^tappedBlock)();
+
 @property (nonatomic) UIFont *font UI_APPEARANCE_SELECTOR;
 @property (nonatomic) UIColor *errorBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic) UIColor *infoBackgroundColor UI_APPEARANCE_SELECTOR;
