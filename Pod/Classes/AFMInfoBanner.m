@@ -280,13 +280,12 @@ static const CGFloat kDefaultHideInterval = 2.0;
 - (void)hide:(BOOL)animated
 {
     if (animated) {
-        __weak __typeof(self) weakSelf = self;
         [UIView animateWithDuration:kAnimationDuration animations:^{
-            weakSelf.frame = CGRectOffset(weakSelf.frame, 0, -weakSelf.frame.size.height);
+            self.frame = CGRectOffset(self.frame, 0, -self.frame.size.height);
         } completion:^(BOOL finished) {
-            [weakSelf removeFromSuperview];
-            if (weakSelf.hideCompletionBlock)
-                weakSelf.hideCompletionBlock();
+            [self removeFromSuperview];
+            if (self.hideCompletionBlock)
+                self.hideCompletionBlock();
         }];
     } else {
         [self removeFromSuperview];
