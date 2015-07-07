@@ -13,8 +13,9 @@
 
 SpecBegin(AFMInfoBanner)
 
+__block AFMInfoBanner *banner;
+
 describe(@"AFMInfoBanner view", ^{
-    __block AFMInfoBanner *banner;
 
     it(@"should show compact red one", ^{
         banner = bannerFromHelper(kShortBannerText, AFMInfoBannerStyleError);
@@ -39,10 +40,81 @@ describe(@"AFMInfoBanner view", ^{
         banner = bannerManual(kShortBannerText, AFMInfoBannerStyleInfo);
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
+});
 
-    afterEach(^{
-        [banner removeFromSuperview];
+describe(@"AFMInfoBanner show block", ^{
+
+    it(@"should be called when shown without animation", ^{
+        banner = [[AFMInfoBanner alloc] init];
+
+        __block BOOL blockCalled = NO;
+        void (^block)() = ^void() { blockCalled = YES; };
+
+        [banner setShowCompletionBlock:block];
+        [banner show:NO];
+        expect(blockCalled).will.beTruthy();
+
+        blockCalled = NO;
+        [banner show:NO withCompletion:block];
+        expect(blockCalled).will.beTruthy();
     });
+
+    it(@"should be called when shown with animation", ^{
+        banner = [[AFMInfoBanner alloc] init];
+
+        __block BOOL blockCalled = NO;
+        void (^block)() = ^void() { blockCalled = YES; };
+
+        [banner setShowCompletionBlock:block];
+        [banner show:YES];
+        expect(blockCalled).will.beTruthy();
+
+        blockCalled = NO;
+        [banner show:YES withCompletion:block];
+        expect(blockCalled).will.beTruthy();
+    });
+});
+
+describe(@"AFMInfoBanner hide block", ^{
+
+    it(@"should be called when hidden without animation", ^{
+        banner = [[AFMInfoBanner alloc] init];
+
+        __block BOOL blockCalled = NO;
+        void (^block)() = ^void() { blockCalled = YES; };
+
+        [banner setHideCompletionBlock:block];
+        [banner show:NO];
+        [banner hide:NO];
+        expect(blockCalled).will.beTruthy();
+
+        blockCalled = NO;
+        [banner show:NO];
+        [banner hide:NO withCompletion:block];
+        expect(blockCalled).will.beTruthy();
+    });
+
+    it(@"should be called when hidden with animation", ^{
+        banner = [[AFMInfoBanner alloc] init];
+
+        __block BOOL blockCalled = NO;
+        void (^block)() = ^void() { blockCalled = YES; };
+
+        [banner setHideCompletionBlock:block];
+        [banner show:NO];
+        [banner hide:YES];
+        expect(blockCalled).will.beTruthy();
+
+        blockCalled = NO;
+        [banner show:NO];
+        [banner hide:YES withCompletion:block];
+        expect(blockCalled).will.beTruthy();
+    });
+
+});
+
+afterEach(^{
+    [banner removeFromSuperview];
 });
 
 SpecEnd

@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
 @property (nonatomic) AFMInfoBannerStyle style;
 @property (nonatomic) NSString *text;
 
+@property (nonatomic, copy) void (^showCompletionBlock)();
+@property (nonatomic, copy) void (^hideCompletionBlock)();
 @property (nonatomic, copy) void (^tappedBlock)();
 
 @property (nonatomic) UIFont *font UI_APPEARANCE_SELECTOR;
@@ -28,6 +30,8 @@ typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
 
 - (void)show:(BOOL)animated;
 - (void)hide:(BOOL)animated;
+- (void)show:(BOOL)animated withCompletion:(void (^)())completionBlock;
+- (void)hide:(BOOL)animated withCompletion:(void (^)())completionBlock;
 
 + (instancetype)showWithText:(NSString *)text
                        style:(AFMInfoBannerStyle)style

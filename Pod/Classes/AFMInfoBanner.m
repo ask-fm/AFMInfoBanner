@@ -178,6 +178,18 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [super layoutSubviews];
 }
 
+- (void)show:(BOOL)animated withCompletion:(void (^)())completionBlock
+{
+    self.showCompletionBlock = completionBlock;
+    [self show:animated];
+}
+
+- (void)hide:(BOOL)animated withCompletion:(void (^)())completionBlock
+{
+    self.hideCompletionBlock = completionBlock;
+    [self hide:animated];
+}
+
 - (void)show
 {
     [self show:YES];
@@ -214,9 +226,14 @@ static const CGFloat kDefaultHideInterval = 2.0;
         self.topSpacingConstraint.constant += self.frame.size.height;
         [UIView animateWithDuration:kAnimationDuration animations:^{
             [self.superview layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            if (self.showCompletionBlock)
+                self.showCompletionBlock();
         }];
     } else {
         self.topSpacingConstraint.constant += self.frame.size.height;
+        if (self.showCompletionBlock)
+            self.showCompletionBlock();
     }
 }
 
@@ -268,9 +285,13 @@ static const CGFloat kDefaultHideInterval = 2.0;
             weakSelf.frame = CGRectOffset(weakSelf.frame, 0, -weakSelf.frame.size.height);
         } completion:^(BOOL finished) {
             [weakSelf removeFromSuperview];
+            if (weakSelf.hideCompletionBlock)
+                weakSelf.hideCompletionBlock();
         }];
     } else {
         [self removeFromSuperview];
+        if (self.hideCompletionBlock)
+            self.hideCompletionBlock();
     }
 }
 
