@@ -32,10 +32,11 @@ typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
 + (instancetype)showWithText:(NSString *)text
                        style:(AFMInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout;
-
++ (instancetype)showWithText:(NSString *)text
+                       style:(AFMInfoBannerStyle)style
+                    animated:(BOOL)animated;
 + (instancetype)showAndHideWithText:(NSString *)text
                               style:(AFMInfoBannerStyle)style;
-
 + (void)hideAll;
 
 @end

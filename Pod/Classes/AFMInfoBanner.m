@@ -284,19 +284,20 @@ static const CGFloat kDefaultHideInterval = 2.0;
                        style:(AFMInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout
 {
-    AFMInfoBanner *banner = [self showWithText:text style:style];
+    AFMInfoBanner *banner = [self showWithText:text style:style animated:YES];
     [banner performSelector:@selector(hide) withObject:nil afterDelay:timeout];
     return banner;
 }
 
 + (instancetype)showWithText:(NSString *)text
                        style:(AFMInfoBannerStyle)style
+                    animated:(BOOL)animated
 {
     AFMInfoBanner *banner = [[[self class] alloc] init];
     [banner setText:text];
     [banner setStyle:style];
 
-    [banner show];
+    [banner show:animated];
     return banner;
 }
 
