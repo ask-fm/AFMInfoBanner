@@ -27,6 +27,11 @@ typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
 @property (nonatomic) UIColor *infoBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic) UIColor *errorTextColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic) UIColor *infoTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic) CGFloat topSpacing UI_APPEARANCE_SELECTOR;
+
+- (id)initWithTargetView:(UIView *)targetView
+         viewAboveBanner:(UIView *)viewAboveBanner
+    additionalTopSpacing:(CGFloat)additionalTopSpacing;
 
 - (void)show:(BOOL)animated;
 - (void)hide:(BOOL)animated;
