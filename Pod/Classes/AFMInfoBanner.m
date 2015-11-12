@@ -33,6 +33,8 @@ static const CGFloat kDefaultHideInterval = 2.0;
 @property (nonatomic) CGFloat additionalTopSpacing;
 @property (nonatomic) NSLayoutConstraint *topSpacingConstraint;
 
+@property (nonatomic) BOOL needsToSetupViews;
+
 @end
 
 @implementation AFMInfoBanner
@@ -51,6 +53,21 @@ static const CGFloat kDefaultHideInterval = 2.0;
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self setUp];
+    }
+    return self;
+}
+
+- (id)initWithTargetView:(UIView *)targetView
+         viewAboveBanner:(UIView *)viewAboveBanner
+    additionalTopSpacing:(CGFloat)additionalTopSpacing
+{
+    self = [self init];
+    if (self) {
+        [self setUp];
+        self.targetView = targetView;
+        self.viewAboveBanner = viewAboveBanner;
+        self.additionalTopSpacing = additionalTopSpacing;
+        self.needsToSetupViews = NO;
     }
     return self;
 }
@@ -119,6 +136,8 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [self configureLabel];
     [self configureTaps];
     [self addSubview:label];
+    self.topSpacing = 0;
+    self.needsToSetupViews = YES;
 }
 
 - (void)configureLabel
@@ -198,7 +217,9 @@ static const CGFloat kDefaultHideInterval = 2.0;
 - (void)show:(BOOL)animated
 {
     [self applyStyle];
-    [self setupViewsAndFrames];
+
+    if (self.needsToSetupViews)
+        [self setupViewsAndFrames];
 
     // In previously indicated, send subview to be below another view.
     // This is used when showing below navigation bar
@@ -223,7 +244,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
         [self.superview layoutIfNeeded];
 
         // Target top layout after animation is one frame down
-        self.topSpacingConstraint.constant += self.frame.size.height;
+        self.topSpacingConstraint.constant += self.topSpacing + self.frame.size.height;
         [UIView animateWithDuration:kAnimationDuration animations:^{
             [self.superview layoutIfNeeded];
         } completion:^(BOOL finished) {
@@ -231,7 +252,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
                 self.showCompletionBlock();
         }];
     } else {
-        self.topSpacingConstraint.constant += self.frame.size.height;
+        self.topSpacingConstraint.constant += self.topSpacing + self.frame.size.height;
         if (self.showCompletionBlock)
             self.showCompletionBlock();
     }
