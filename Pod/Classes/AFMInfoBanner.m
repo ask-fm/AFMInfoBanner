@@ -263,11 +263,11 @@ static const CGFloat kDefaultHideInterval = 2.0;
     CVKHierarchySearcher *searcher = [[CVKHierarchySearcher alloc] init];
     UIViewController *topmostVC = [searcher topmostViewController];
     UINavigationBar *possibleBar = [self navigationBarFor:topmostVC];
-    if (possibleBar) {
+    if (possibleBar && !possibleBar.translucent) {
         [self setupViewsForNavigationBar:possibleBar];
     } else {
         UINavigationController *navVC = [searcher topmostNavigationController];
-        if (navVC && navVC.navigationBar.superview) {
+        if (navVC && navVC.navigationBar.superview && !navVC.navigationBar.translucent) {
             [self setupViewsForNavigationBar:navVC.navigationBar];
         } else {
             [self setupViewsToShowInWindow];
