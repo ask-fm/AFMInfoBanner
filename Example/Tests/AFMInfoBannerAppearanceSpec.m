@@ -38,6 +38,30 @@ describe(@"AFMInfoBanner UIAppearance", ^{
         expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
     });
 
+    it(@"should prioritise custom look over UIAppearance looks", ^{
+        [[AFMInfoBanner appearance] setInfoBackgroundColor:[UIColor blackColor]];
+        [[AFMInfoBanner appearance] setInfoTextColor:[UIColor yellowColor]];
+
+        banner = bannerFromHelper(kShortBannerText, AFMInfoBannerStyleInfo);
+        banner.customBackgroundColor = [UIColor cyanColor];
+        banner.customTextColor = [UIColor yellowColor];
+        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
+    });
+
+    it(@"should use default style look for background color if it's not customised", ^{
+        [[AFMInfoBanner appearance] setInfoTextColor:[UIColor yellowColor]];
+
+        banner = bannerFromHelper(kShortBannerText, AFMInfoBannerStyleInfo);
+        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
+    });
+
+    it(@"should use default style look for text color if it's not customised", ^{
+        [[AFMInfoBanner appearance] setErrorBackgroundColor:[UIColor purpleColor]];
+
+        banner = bannerFromHelper(kShortBannerText, AFMInfoBannerStyleError);
+        expect(banner).will.haveValidSnapshotNamed(deviceSpecificName());
+    });
+
     afterEach(^{
         [banner removeFromSuperview];
 

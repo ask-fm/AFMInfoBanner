@@ -3,7 +3,7 @@
 language: objective-c
 before_install:
   - brew update
-  - gem install cocoapods -v '= 0.37.2'
+  - gem install cocoapods -v '= 0.39.0'
   - cd Example && pod install && cd -
 script:
   - xctool build-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
