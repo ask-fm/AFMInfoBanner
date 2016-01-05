@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AFMInfoBanner"
-  s.version          = "1.1"
+  s.version          = "1.2"
   s.summary          = "Easy to use auto-hiding notice bar below Navigation Bar."
   s.description      = <<-DESC
                        Red or green banner with text sliding from below the Navigation Bar
