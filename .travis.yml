@@ -1,12 +1,12 @@
 # reference: http://www.objc.io/issue-6/travis-ci.html
-
+rvm: 2.2.2
+osx_image: xcode7.2
 language: objective-c
+
 before_install:
-  - brew update
-  - gem install cocoapods -v '= 0.37.2'
+  - gem install cocoapods -v '= 0.39.0'
   - cd Example && pod install && cd -
 script:
-  - xctool build-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool run-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 5s,OS=latest"
-  - xctool run-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6,OS=latest"
-  - xctool run-tests -workspace Example/AFMInfoBanner.xcworkspace -scheme AFMInfoBanner -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=latest"
+  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 5s,OS=latest' clean test
+  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' clean test
+  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=latest' clean test

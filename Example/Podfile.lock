@@ -1,5 +1,5 @@
 PODS:
-  - AFMInfoBanner (1.1):
+  - AFMInfoBanner (1.2):
     - CVKHierarchySearcher (~> 0.2)
   - CVKHierarchySearcher (0.2.0)
   - Expecta (1.0.0)
@@ -21,11 +21,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AFMInfoBanner: 207a0622fdfc6bff3e8d04ac557932f3d6849425
+  AFMInfoBanner: f320eeae79d6c3871cd2f5667f536913708532f8
   CVKHierarchySearcher: 7be8d3bcbcc6f86ff07f785e6c632b5e40da2553
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
   FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0

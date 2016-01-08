@@ -80,14 +80,33 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)applyStyle
 {
-    if (self.style == AFMInfoBannerStyleError) {
-        [self setBackgroundColor:self.errorBackgroundColor ?: UIColorFromRGB(kRedBannerColor)];
-        [self.textLabel setTextColor:self.errorTextColor ?: UIColorFromRGB(kDefaultTextColor)];
-    } else if (self.style == AFMInfoBannerStyleInfo) {
-        [self setBackgroundColor:self.infoBackgroundColor ?: UIColorFromRGB(kGreenBannerColor)];
-        [self.textLabel setTextColor:self.infoTextColor ?: UIColorFromRGB(kDefaultTextColor)];
-    }
+    [self applyBackgroundColor];
+    [self applyTextColor];
     [self.textLabel setFont:self.font ?: [UIFont boldSystemFontOfSize:kFontSize]];
+}
+
+- (void)applyBackgroundColor
+{
+    if (self.customBackgroundColor) {
+        [self setBackgroundColor:self.customBackgroundColor];
+    } else {
+        if (self.style == AFMInfoBannerStyleError)
+            [self setBackgroundColor:self.errorBackgroundColor ?: UIColorFromRGB(kRedBannerColor)];
+        else
+            [self setBackgroundColor:self.infoBackgroundColor ?: UIColorFromRGB(kGreenBannerColor)];
+    }
+}
+
+- (void)applyTextColor
+{
+    if (self.customTextColor) {
+        [self.textLabel setTextColor:self.customTextColor];
+    } else {
+        if (self.style == AFMInfoBannerStyleError)
+            [self.textLabel setTextColor:self.errorTextColor ?: UIColorFromRGB(kDefaultTextColor)];
+        else
+            [self.textLabel setTextColor:self.infoTextColor ?: UIColorFromRGB(kDefaultTextColor)];
+    }
 }
 
 - (void)setText:(NSString *)text
@@ -109,6 +128,12 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [self applyStyle];
 }
 
+- (void)setCustomBackgroundColor:(UIColor *)customBackgroundColor
+{
+    _customBackgroundColor = customBackgroundColor;
+    [self applyStyle];
+}
+
 - (void)setErrorTextColor:(UIColor *)errorTextColor
 {
     _errorTextColor = errorTextColor;
@@ -118,6 +143,12 @@ static const CGFloat kDefaultHideInterval = 2.0;
 - (void)setInfoTextColor:(UIColor *)infoTextColor
 {
     _infoTextColor = infoTextColor;
+    [self applyStyle];
+}
+
+- (void)setCustomTextColor:(UIColor *)customTextColor
+{
+    _customTextColor = customTextColor;
     [self applyStyle];
 }
 
