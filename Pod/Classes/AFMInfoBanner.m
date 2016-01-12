@@ -289,6 +289,16 @@ static const CGFloat kDefaultHideInterval = 2.0;
     }
 }
 
+- (void)showAndHideAfter:(NSTimeInterval)timeout animated:(BOOL)animated
+{
+    [self show:animated];
+
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, timeout * NSEC_PER_SEC);
+    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        [self hide:animated];
+    });
+}
+
 - (void)setupViewsAndFrames
 {
     CVKHierarchySearcher *searcher = [[CVKHierarchySearcher alloc] init];
@@ -356,8 +366,10 @@ static const CGFloat kDefaultHideInterval = 2.0;
                        style:(AFMInfoBannerStyle)style
                 andHideAfter:(NSTimeInterval)timeout
 {
-    AFMInfoBanner *banner = [self showWithText:text style:style animated:YES];
-    [banner performSelector:@selector(hide) withObject:nil afterDelay:timeout];
+    AFMInfoBanner *banner = [[AFMInfoBanner alloc] init];
+    banner.style = style;
+    banner.text = text;
+    [banner showAndHideAfter:timeout animated:YES];
     return banner;
 }
 
