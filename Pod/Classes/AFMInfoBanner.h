@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, AFMInfoBannerStyle) {
 
 @interface AFMInfoBanner : UIView
 
+@property (nonatomic, readonly, getter=isShown) BOOL shown;
+
 @property (nonatomic) AFMInfoBannerStyle style;
 @property (nonatomic) NSString *text;
 

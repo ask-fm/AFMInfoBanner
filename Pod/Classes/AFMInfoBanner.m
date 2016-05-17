@@ -27,11 +27,15 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 @interface AFMInfoBanner ()
 
+@property (nonatomic, readwrite) BOOL shown;
+
 @property (nonatomic) UILabel *textLabel;
 @property (nonatomic) UIView *targetView;
 @property (nonatomic) UIView *viewAboveBanner;
 @property (nonatomic) CGFloat additionalTopSpacing;
 @property (nonatomic) NSLayoutConstraint *topSpacingConstraint;
+
+@property (nonatomic) NSTimer *hideTimer;
 
 @property (nonatomic) BOOL needsToSetupViews;
 
@@ -167,6 +171,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [self configureLabel];
     [self configureTaps];
     [self addSubview:label];
+    [self setupConstraints];
     self.topSpacing = 0;
     self.needsToSetupViews = YES;
 }
@@ -191,13 +196,24 @@ static const CGFloat kDefaultHideInterval = 2.0;
         self.tappedBlock();
 }
 
-- (void)updateConstraints
+- (void)setupConstraints
 {
-    NSDictionary *viewsDict = @{@"self": self, @"label": self.textLabel};
+    // Position label correctly
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[label]-|"
+                                                                 options:0 metrics:nil views:@{@"label": self.textLabel}]];
+    CGFloat topMargin = kMargin + self.additionalTopSpacing;
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(top)-[label]-(bottom)-|"
+                                                                 options:0
+                                                                 metrics:@{@"top": @(topMargin), @"bottom": @(kMargin)}
+                                                                   views:@{@"label": self.textLabel}]];
+}
 
+- (void)setupParentConstraints
+{
     // Expand to the superview's width
     [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[self]|"
-                                                                           options:0 metrics:nil views:viewsDict]];
+                                                                           options:0 metrics:nil views:@{@"self": self}]];
+
     // Place initial constraint exactly one frame above the bottom line of view above us
     // or above top of screen, if there is no such view. Assign it to property to animate later.
     CGFloat topOffset = -self.frame.size.height;
@@ -206,19 +222,24 @@ static const CGFloat kDefaultHideInterval = 2.0;
     NSArray *topConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(offset)-[self]"
                                                                       options:0
                                                                       metrics:@{@"offset": @(topOffset)}
-                                                                        views:viewsDict];
+                                                                        views:@{@"self": self}];
     self.topSpacingConstraint = [topConstraints firstObject];
-    [self.superview addConstraints:topConstraints];
 
-    // Position label correctly
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[label]-|"
-                                                                 options:0 metrics:nil views:viewsDict]];
-    CGFloat topMargin = kMargin + self.additionalTopSpacing;
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(top)-[label]-(bottom)-|"
-                                                                 options:0
-                                                                 metrics:@{@"top": @(topMargin), @"bottom": @(kMargin)}
-                                                                   views:viewsDict]];
+    [self.superview addConstraints:topConstraints];
+}
+
+- (void)updateConstraints
+{
     [super updateConstraints];
+
+    if (self.viewAboveBanner)
+        self.topSpacingConstraint.constant = CGRectGetMaxY(self.viewAboveBanner.frame);
+
+    if ([self isShown]) {
+        self.topSpacingConstraint.constant += self.topSpacing;
+    } else {
+        self.topSpacingConstraint.constant += -self.frame.size.height;
+    }
 }
 
 - (void)layoutSubviews
@@ -226,6 +247,17 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [super layoutSubviews];
     self.textLabel.preferredMaxLayoutWidth = self.textLabel.frame.size.width;
     [super layoutSubviews];
+}
+
+- (void)updateUI
+{
+    // First pass calculates the height correctly with existing constraints.
+    [self updateConstraintsIfNeeded];
+    [self layoutIfNeeded];
+
+    // New pass to take frame and new top constraint, position frame before the animation
+    [self setNeedsUpdateConstraints];
+    [self layoutIfNeeded];
 }
 
 - (void)show:(BOOL)animated withCompletion:(void (^)())completionBlock
@@ -247,6 +279,18 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)show:(BOOL)animated
 {
+
+    if (self.hideTimer) {
+        [self.hideTimer invalidate];
+        self.hideTimer = nil;
+    }
+
+    if ([self superview]) {
+        if (self.showCompletionBlock)
+            self.showCompletionBlock();
+        return;
+    }
+
     [self applyStyle];
 
     if (self.needsToSetupViews)
@@ -259,31 +303,23 @@ static const CGFloat kDefaultHideInterval = 2.0;
     else
         [self.targetView addSubview:self];
 
+    [self setupParentConstraints];
+
     [self setHidden:NO];
 
+    self.shown = YES;
+    [self updateUI];
+
     if (animated) {
-        // First pass calculates the height correctly with existing constraints.
-        // Self-only doesn't calculate height on iOS 6, so pass through a superview
-        [self updateConstraintsIfNeeded];
-        [self.superview layoutIfNeeded];
+        self.transform = CGAffineTransformMakeTranslation(0, -(self.topSpacing + self.frame.size.height));
 
-        // Invalidate the top contraint because it needs to be changed
-        [self.superview removeConstraint:self.topSpacingConstraint];
-
-        // New pass to take frame and new top constraint, position frame before the animation
-        [self setNeedsUpdateConstraints];
-        [self.superview layoutIfNeeded];
-
-        // Target top layout after animation is one frame down
-        self.topSpacingConstraint.constant += self.topSpacing + self.frame.size.height;
         [UIView animateWithDuration:kAnimationDuration animations:^{
-            [self.superview layoutIfNeeded];
+            self.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished) {
             if (self.showCompletionBlock)
                 self.showCompletionBlock();
         }];
     } else {
-        self.topSpacingConstraint.constant += self.topSpacing + self.frame.size.height;
         if (self.showCompletionBlock)
             self.showCompletionBlock();
     }
@@ -293,10 +329,17 @@ static const CGFloat kDefaultHideInterval = 2.0;
 {
     [self show:animated];
 
-    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, timeout * NSEC_PER_SEC);
-    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-        [self hide:animated];
-    });
+    self.hideTimer = [NSTimer scheduledTimerWithTimeInterval:timeout
+                                                      target:self
+                                                    selector:@selector(scheduledHide:)
+                                                    userInfo:@(animated)
+                                                     repeats:NO];
+}
+
+- (void)scheduledHide:(NSTimer *)timer
+{
+    BOOL animated = [timer userInfo];
+    [self hide:animated];
 }
 
 - (void)setupViewsAndFrames
@@ -341,9 +384,19 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
 - (void)hide:(BOOL)animated
 {
+    if (self.hideTimer) {
+        [self.hideTimer invalidate];
+        self.hideTimer = nil;
+    }
+
+    self.shown = NO;
+    [self updateUI];
+
     if (animated) {
+        self.transform = CGAffineTransformMakeTranslation(0, self.topSpacing + self.frame.size.height);
+
         [UIView animateWithDuration:kAnimationDuration animations:^{
-            self.frame = CGRectOffset(self.frame, 0, -self.frame.size.height);
+            self.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished) {
             [self removeFromSuperview];
             if (self.hideCompletionBlock)
