@@ -34,6 +34,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 @property (nonatomic) UIView *viewAboveBanner;
 @property (nonatomic) CGFloat additionalTopSpacing;
 @property (nonatomic) NSLayoutConstraint *topSpacingConstraint;
+@property (nonatomic) NSLayoutConstraint *topMarginConstraint;
 
 @property (nonatomic) NSTimer *hideTimer;
 
@@ -202,10 +203,12 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[label]-|"
                                                                  options:0 metrics:nil views:@{@"label": self.textLabel}]];
     CGFloat topMargin = kMargin + self.additionalTopSpacing;
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(top)-[label]-(bottom)-|"
-                                                                 options:0
-                                                                 metrics:@{@"top": @(topMargin), @"bottom": @(kMargin)}
-                                                                   views:@{@"label": self.textLabel}]];
+    NSArray *labelConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(top)-[label]-(bottom)-|"
+                                                                        options:0
+                                                                        metrics:@{@"top": @(topMargin), @"bottom": @(kMargin)}
+                                                                          views:@{@"label": self.textLabel}];
+    self.topMarginConstraint = [labelConstraints firstObject];
+    [self addConstraints:labelConstraints];
 }
 
 - (void)setupParentConstraints
@@ -231,6 +234,8 @@ static const CGFloat kDefaultHideInterval = 2.0;
 - (void)updateConstraints
 {
     [super updateConstraints];
+
+    self.topMarginConstraint.constant = kMargin + self.additionalTopSpacing;
 
     if (self.viewAboveBanner)
         self.topSpacingConstraint.constant = CGRectGetMaxY(self.viewAboveBanner.frame);
