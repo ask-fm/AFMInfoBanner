@@ -236,6 +236,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
     [super updateConstraints];
 
     self.topMarginConstraint.constant = kMargin + self.additionalTopSpacing;
+    self.topSpacingConstraint.constant = 0;
 
     if (self.viewAboveBanner)
         self.topSpacingConstraint.constant = CGRectGetMaxY(self.viewAboveBanner.frame);
@@ -262,6 +263,7 @@ static const CGFloat kDefaultHideInterval = 2.0;
 
     // New pass to take frame and new top constraint, position frame before the animation
     [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
     [self layoutIfNeeded];
 }
 
