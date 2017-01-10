@@ -39,7 +39,7 @@ You can use Example project to play around with AFMInfoBanner. To run the exampl
 
 ## Requirements
 
-iOS 7 and up.
+iOS 8 and up.
 
 Usage of `UINavigationBar` or `UINavigationController` for navigation bar.
 
