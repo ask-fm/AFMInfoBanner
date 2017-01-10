@@ -1,10 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'AFMInfoBanner', :exclusive => true do
+target 'AFMInfoBanner' do
   pod "AFMInfoBanner", :path => "../"
 end
 
-target 'Tests', :exclusive => true do
+target 'Tests' do
   pod "AFMInfoBanner", :path => "../"
 
   pod 'Specta'

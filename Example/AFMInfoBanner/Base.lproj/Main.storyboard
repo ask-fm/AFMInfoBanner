@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bdK-MV-rqO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="bdK-MV-rqO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Initial View Controller-->
@@ -15,12 +19,12 @@
                         <viewControllerLayoutGuide type="bottom" id="ivY-Vb-wU9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mxf-ab-4jd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notice text to show" translatesAutoresizingMaskIntoConstraints="NO" id="bRH-KI-nPM">
-                                <rect key="frame" x="20" y="163" width="280" height="61"/>
-                                <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                                <rect key="frame" x="20" y="163" width="335" height="61"/>
+                                <color key="backgroundColor" red="0.92144900560379028" green="0.92063164710998535" blue="0.94577085971832275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="TCT-SZ-gFx"/>
                                 </constraints>
@@ -28,9 +32,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mj-N5-P49">
-                                <rect key="frame" x="180" y="232" width="94" height="30"/>
+                                <rect key="frame" x="235" y="232" width="94" height="30"/>
                                 <state key="normal" title="Red banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showRed:" destination="bdK-MV-rqO" eventType="touchUpInside" id="eo8-nT-QQc"/>
@@ -39,14 +43,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTZ-wl-yrK">
                                 <rect key="frame" x="46" y="232" width="94" height="30"/>
                                 <state key="normal" title="Green banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showGreen:" destination="bdK-MV-rqO" eventType="touchUpInside" id="m91-rl-ASq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hTZ-wl-yrK" firstAttribute="top" secondItem="bRH-KI-nPM" secondAttribute="bottom" constant="8" id="1HI-Nv-qdY"/>
                             <constraint firstItem="hTZ-wl-yrK" firstAttribute="leading" secondItem="Mxf-ab-4jd" secondAttribute="leadingMargin" constant="30" id="Vtc-1d-laO"/>
@@ -74,9 +78,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8ad-wd-ClA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1439586060209424" green="0.16490101439790575" blue="0.59945598821989532" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.1439586060209424" green="0.16490101439790575" blue="0.43715232329842935" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1439586060209424" green="0.16490101439790575" blue="0.59945598821989532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1439586060209424" green="0.16490101439790575" blue="0.43715232329842935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2Nt-hV-c3s" kind="relationship" relationship="rootViewController" id="DJm-ar-s2k"/>
@@ -95,12 +99,12 @@
                         <viewControllerLayoutGuide type="bottom" id="eei-IS-srW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ll7-o6-Q42">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notice text to show" translatesAutoresizingMaskIntoConstraints="NO" id="B8p-g7-5Cd">
-                                <rect key="frame" x="20" y="120" width="280" height="61"/>
-                                <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                                <rect key="frame" x="20" y="120" width="335" height="61"/>
+                                <color key="backgroundColor" red="0.92144900560379028" green="0.92063164710998535" blue="0.94577085971832275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="zse-Ig-LSt"/>
                                 </constraints>
@@ -108,9 +112,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQb-ao-IkY">
-                                <rect key="frame" x="180" y="189" width="94" height="30"/>
+                                <rect key="frame" x="235" y="189" width="94" height="30"/>
                                 <state key="normal" title="Red banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showRed:" destination="2Nt-hV-c3s" eventType="touchUpInside" id="Yki-HP-2UQ"/>
@@ -119,14 +123,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-MM-3u5">
                                 <rect key="frame" x="46" y="189" width="94" height="30"/>
                                 <state key="normal" title="Green banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showGreen:" destination="2Nt-hV-c3s" eventType="touchUpInside" id="IY2-db-sDx"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Lzf-MM-3u5" firstAttribute="leading" secondItem="Ll7-o6-Q42" secondAttribute="leadingMargin" constant="30" id="0v2-A8-hjv"/>
                             <constraint firstItem="tQb-ao-IkY" firstAttribute="width" secondItem="Lzf-MM-3u5" secondAttribute="width" id="BwL-Bz-aEX"/>
@@ -152,7 +156,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textView" destination="B8p-g7-5Cd" id="bLA-HX-vg5"/>
-                        <segue destination="ezf-HP-zAA" kind="modal" id="WCj-LC-EKL"/>
+                        <segue destination="ezf-HP-zAA" kind="modal" identifier="modalSegue" id="WCj-LC-EKL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ES1-yT-vrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,12 +172,12 @@
                         <viewControllerLayoutGuide type="bottom" id="DFf-BL-XkI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gjU-gr-dLo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notice text to show" translatesAutoresizingMaskIntoConstraints="NO" id="Jts-1j-Gad">
-                                <rect key="frame" x="20" y="164" width="280" height="61"/>
-                                <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                                <rect key="frame" x="20" y="164" width="335" height="61"/>
+                                <color key="backgroundColor" red="0.92144900560379028" green="0.92063164710998535" blue="0.94577085971832275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="AmC-ZA-1Ud"/>
                                 </constraints>
@@ -181,9 +185,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3S-u9-I5d">
-                                <rect key="frame" x="180" y="233" width="94" height="30"/>
+                                <rect key="frame" x="235" y="233" width="94" height="30"/>
                                 <state key="normal" title="Red banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showRed:" destination="ezf-HP-zAA" eventType="touchUpInside" id="oLc-br-zRY"/>
@@ -192,19 +196,19 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBo-4u-55o">
                                 <rect key="frame" x="46" y="233" width="94" height="30"/>
                                 <state key="normal" title="Green banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="showGreen:" destination="ezf-HP-zAA" eventType="touchUpInside" id="AmV-KO-3Tb"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iue-Gt-XNL">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <color key="barTintColor" red="0.14395860599999999" green="0.16490101439999999" blue="0.43715232329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.14395860599999999" green="0.16490101439999999" blue="0.43715232329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem id="EEa-MT-sRF">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dfX-3g-gJw">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="dismiss:" destination="ezf-HP-zAA" id="5Dk-BT-cbl"/>
                                             </connections>
@@ -213,7 +217,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IBo-4u-55o" firstAttribute="top" secondItem="Jts-1j-Gad" secondAttribute="bottom" constant="8" id="484-Ot-gUq"/>
                             <constraint firstItem="Z3S-u9-I5d" firstAttribute="width" secondItem="IBo-4u-55o" secondAttribute="width" id="4od-2m-pPe"/>
@@ -243,6 +247,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
 </document>
