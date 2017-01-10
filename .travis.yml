@@ -7,6 +7,6 @@ before_install:
   - gem install cocoapods -v '= 1.1.1'
   - cd Example && pod install && cd -
 script:
-  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 5s,OS=10.1' clean test
-  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.1' clean test
-  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=10.1' clean test
+  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.1' clean test
+  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1' clean test
+  - xcodebuild -workspace Example/AFMInfoBanner.xcworkspace -scheme Tests -destination 'platform=iOS Simulator,name=iPhone 7 Plus,OS=10.1' clean test
