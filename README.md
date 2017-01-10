@@ -52,10 +52,6 @@ it, simply add the following line to your Podfile:
 
     pod 'AFMInfoBanner'
 
-## Contact person
-
-Romans Karpelcevs, roman@ask.fm
-
 ## License
 
 AFMInfoBanner is available under the MIT license. See the LICENSE file for more info.
