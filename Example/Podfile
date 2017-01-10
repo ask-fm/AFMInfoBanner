@@ -9,6 +9,6 @@ target 'Tests' do
 
   pod 'Specta'
   pod 'Expecta'
-  pod 'FBSnapshotTestCase'
+  pod 'FBSnapshotTestCase/Core'
   pod 'Expecta+Snapshots'
 end

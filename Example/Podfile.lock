@@ -2,18 +2,19 @@ PODS:
   - AFMInfoBanner (1.2.1):
     - CVKHierarchySearcher (~> 0.2)
   - CVKHierarchySearcher (0.2.0)
-  - Expecta (1.0.0)
-  - Expecta+Snapshots (1.3.4):
+  - Expecta (1.0.5)
+  - Expecta+Snapshots (3.0.0):
     - Expecta (~> 1.0)
-    - FBSnapshotTestCase (~> 1.8)
-  - FBSnapshotTestCase (1.8.1)
-  - Specta (1.0.2)
+    - FBSnapshotTestCase/Core (~> 2.0)
+    - Specta (~> 1.0)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - Specta (1.0.5)
 
 DEPENDENCIES:
   - AFMInfoBanner (from `../`)
   - Expecta
   - Expecta+Snapshots
-  - FBSnapshotTestCase
+  - FBSnapshotTestCase/Core
   - Specta
 
 EXTERNAL SOURCES:
@@ -23,11 +24,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFMInfoBanner: a7bcfd409faa624f043e604ae4fb789c84b22815
   CVKHierarchySearcher: 7be8d3bcbcc6f86ff07f785e6c632b5e40da2553
-  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
-  Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
-  FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
-  Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
+  Expecta+Snapshots: c343f410c7a6392f3e22e78f94c44b6c0749a516
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
 
-PODFILE CHECKSUM: b32583b80d983ec6cd2e54b38b9fd296a7840681
+PODFILE CHECKSUM: c0ab804d6293d0e8f9b9223ffccffb43d85ade77
 
 COCOAPODS: 1.1.1
